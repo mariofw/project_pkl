@@ -16,39 +16,13 @@
   </style>
  </head>
  <body class="bg-white text-gray-900">
-  <!-- Top bar -->
-  <div class="bg-green-900 text-green-200 text-xs sm:text-sm">
-   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 py-1 sm:py-2 space-y-1 sm:space-y-0 sm:space-x-6">
-    <div class="flex items-center space-x-2">
-     <i class="fas fa-map-marker-alt text-green-400">
-     </i>
-     <span>
-      88 Rocky St, Big City, NY 12345
-     </span>
-    </div>
-    <div class="flex items-center space-x-2">
-     <i class="fas fa-envelope text-green-400">
-     </i>
-     <a class="hover:underline" href="mailto:info@rumputlandscaping.com">
-      info@rumputlandscaping.com
-     </a>
-    </div>
-    <div class="flex items-center space-x-2">
-     <i class="fas fa-phone-alt text-green-400">
-     </i>
-     <a class="hover:underline" href="tel:+1234567890">
-      +1 234-456-789
-     </a>
-    </div>
-   </div>
-  </div>
   <!-- Navbar -->
   <nav class="bg-white shadow-sm">
    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
     <div class="flex items-center space-x-2">
-     <img alt="Rumput Landscaping logo, green leaf icon with text Rumput" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/a48f48e5-fe7c-40c9-7840-5207348ef717.jpg" width="40"/>
+     <img alt="HIDOGRANIK ALFA LOGO" class="w-10 h-10" height="40" src="build/assets/images/Logo_HA.png" width="50"/>
      <span class="font-bold text-lg text-green-900">
-      Rumput
+      HIDOGRANIK ALFA
      </span>
     </div>
     <ul class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
@@ -78,9 +52,7 @@
       </a>
      </li>
     </ul>
-    <a class="hidden md:inline-block bg-green-700 hover:bg-green-800 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded" href="#">
-     Make Appointment
-    </a>
+     <a class="hidden md:inline-block bg-green-700 hover:bg-blue-800 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded" href="/login">Login</a>
     <button aria-label="Toggle menu" class="md:hidden text-green-900 focus:outline-none" id="mobile-menu-button">
      <i class="fas fa-bars fa-lg">
      </i>
@@ -112,11 +84,6 @@
      <li>
       <a class="block hover:text-green-700" href="#">
        Blog
-      </a>
-     </li>
-     <li>
-      <a class="block bg-green-700 hover:bg-green-800 text-white text-center rounded px-3 py-2 mt-2" href="#">
-       Make Appointment
       </a>
      </li>
     </ul>
