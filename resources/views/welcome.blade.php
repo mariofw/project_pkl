@@ -69,9 +69,7 @@
     <div class="container-responsive">
       <div class="flex justify-between items-center py-3 min-h-[60px]">
         <div class="flex items-center space-x-2 flex-shrink-0">
-          <div class="w-8 h-8 sm:w-10 sm:h-10 bg-green-700 rounded-full flex items-center justify-center">
-            <i class="fas fa-leaf text-white text-sm sm:text-base"></i>
-          </div>
+          <img alt="Team photo" class="h-10 w-auto" src="/build/assets/images/Logo_HA.PNg"/>
           <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
             HIDROGANIK ALFA
           </span>
