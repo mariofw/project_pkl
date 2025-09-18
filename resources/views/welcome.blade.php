@@ -22,7 +22,7 @@
     <div class="flex items-center space-x-2">
      <img alt="HIDOGRANIK ALFA LOGO" class="w-10 h-10" height="40" src="build/assets/images/Logo_HA.png" width="50"/>
      <span class="font-bold text-lg text-green-900">
-      HIDOGRANIK ALFA
+      HIDROGANIK ALFA
      </span>
     </div>
     <ul class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
@@ -91,28 +91,26 @@
   </nav>
   <!-- Hero Section -->
   <section class="relative">
-   <img alt="Gardener wearing cap and glasses holding two green shrubs in a garden" class="w-full h-[28rem] object-cover" height="700" src="https://storage.googleapis.com/a1aa/image/806f2709-62ad-46da-e8d9-786f098979a9.jpg" width="1920"/>
+   <img alt="om dan kawan kawan" class="w-full h-[28rem] object-cover" height="700" src="build/assets/images/Gambar_Bersama.jpg" width="1920"/>
    <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
     <div class="max-w-xl text-white">
      <div class="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-green-300 mb-2">
       <i class="fas fa-seedling">
       </i>
       <span>
-       Gardening &amp; Landscaping Services
+       Pelatihan &amp; Edukasi
       </span>
      </div>
      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-      All things grow
+      Hidroponik Organik 
       <br/>
-      with care &amp; love
+      untuk masa depan sehat
      </h1>
      <p class="text-sm sm:text-base max-w-md mb-6">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Hidroganik Alfa adalah usaha pertanian modern yang
+ fokus pada pengembangan sistem hidroponik organik
+ untuk masyarakat urban yang berdiri sejak tahun 2019.
      </p>
-     <a class="inline-block bg-green-700 hover:bg-green-800 text-white text-xs sm:text-sm font-semibold px-5 py-2 rounded" href="#">
-      Discover More
-     </a>
     </div>
    </div>
   </section>
@@ -121,41 +119,44 @@
    <div>
     <i class="fas fa-seedling text-3xl mb-2">
     </i>
-    <h3 class="font-semibold mb-1">
-     Gardening
+    <h3 class="font-semibold mb-5">
+     Pelatihan & Edukasi
     </h3>
     <p class="text-xs sm:text-sm">
-     Lorem ipsum dolor sit amet consectetur adipiscing elit.
+     <li>Pelatihan hidroponik organik (pemula – lanjutan) </li>
+     <li>Pelatihan pembuatan pupuk organik cair (POC) </li>
+     <li>Pelatihan pembuatan pestisida alami </li>
+     <li>Workshop urban farming untuk sekolah, instansi pemerintah, komunitas dan masyarakat umum</li>
     </p>
    </div>
    <div>
     <i class="fas fa-tree text-3xl mb-2">
     </i>
-    <h3 class="font-semibold mb-1">
-     Landscaping
+    <h3 class="font-semibold mb-5">
+     Pendampingan & Konsultasi 
     </h3>
     <p class="text-xs sm:text-sm">
-     Lorem ipsum dolor sit amet consectetur adipiscing elit.
+    Mendampingi mitra atau peserta pelatihan hingga berhasil mengelola kebun hidroponik secara mandiri.
     </p>
    </div>
    <div>
     <i class="fas fa-tools text-3xl mb-2">
     </i>
-    <h3 class="font-semibold mb-1">
-     Maintenance
+    <h3 class="font-semibold mb-5">
+     Pembuatan Instalasi Hidroponik
     </h3>
     <p class="text-xs sm:text-sm">
-     Lorem ipsum dolor sit amet consectetur adipiscing elit.
+     Menyediakan jasa pembuatan instalasi hidroponik sesuai kebutuhan rumah tangga, sekolah, instansi pemerintah, komunitas, hingga bisnis komersial.
     </p>
    </div>
    <div>
     <i class="fas fa-leaf text-3xl mb-2">
     </i>
-    <h3 class="font-semibold mb-1">
-     Nursery
+    <h3 class="font-semibold mb-5">
+     Pendampingan & Konsultasi 
     </h3>
     <p class="text-xs sm:text-sm">
-     Lorem ipsum dolor sit amet consectetur adipiscing elit.
+     Mendampingi mitra atau peserta pelatihan hingga berhasil mengelola kebun hidroponik secara mandiri.
     </p>
    </div>
   </section>
