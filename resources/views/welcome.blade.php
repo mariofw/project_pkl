@@ -69,7 +69,7 @@
     <div class="container-responsive">
       <div class="flex justify-between items-center py-3 min-h-[60px]">
         <div class="flex items-center space-x-2 flex-shrink-0">
-          <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.jpg') }}"/>
+          <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.png') }}"/>
           <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
             HIDROGANIK ALFA
           </span>
