@@ -69,12 +69,11 @@
     <div class="container-responsive">
       <div class="flex justify-between items-center py-3 min-h-[60px]">
         <div class="flex items-center space-x-2 flex-shrink-0">
-          <img alt="Team photo" class="h-10 w-auto" src="/build/images/Logo_HA.PNg"/>
+          <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.jpg') }}"/>
           <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
             HIDROGANIK ALFA
           </span>
         </div>
-        
         <!-- Desktop Menu -->
         <ul class="hidden lg:flex space-x-4 xl:space-x-8 responsive-text-sm font-semibold text-gray-700">
           <li><a class="hover:text-green-700 transition-colors" href="#">Home</a></li>
@@ -111,7 +110,7 @@
   <!-- Hero Section -->
   <section class="relative overflow-hidden">
     <div class="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]">
-      <img alt="Team photo" class="w-full h-full object-cover" src="/build/images/Gambar_Bersama.jpg"/>
+      <img alt="Team photo" class="w-full h-full object-cover" src="{{ asset('images/Gambar_Bersama.jpg') }}"/>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     </div>
     <div class="absolute inset-0 flex items-center">
