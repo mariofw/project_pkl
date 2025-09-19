@@ -166,9 +166,9 @@
         
         <div class="text-center space-y-3 sm:space-y-4">
           <i class="fas fa-shopping-cart responsive-text-2xl sm:responsive-text-3xl"></i>
-          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Produk & Sarana Produksi</h3>
+          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Produk Pertanian Organik</h3>
           <p class="responsive-text-xs">
-            Menyediakan produk sayur sehat, pupuk organik, pestisida alami, benih, bibit, dan sarana produksi hidroponik lainnya.
+            Menjual hasil panen hidroponik organik segar yang sehat, serta menyediakan pupuk organik, pestisida alami, benih, bibit, dan sarana produksi hidroponik lainnya.
           </p>
         </div>
       </div>
@@ -179,19 +179,33 @@
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-        <div class="order-2 lg:order-1">
+        <div>
           <img alt="Garden aerial view" class="w-full rounded-lg shadow-lg aspect-video object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
         </div>
-        <div class="order-1 lg:order-2 space-y-4 sm:space-y-6">
-          <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">About Us</p>
+        <div class="space-y-4 sm:space-y-6">
+          <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">TENTANG KAMI</p>
           <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight">
-            We have expertise in all facets of hydroponic maintenance.
+            Hidroponik Organik Untuk Masa Depan Sehat
           </h2>
           <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
-            Dengan pengalaman lebih dari 5 tahun, kami telah membantu ribuan masyarakat untuk memulai bercocok tanam hidroponik organik yang sehat dan berkelanjutan.
+            Hidroganik Alfa adalah usaha pertanian modern yang fokus pada pengembangan sistem hidroponik organik untuk masyarakat urban yang berdiri sejak tahun 2019. Sebelumnya dikenal dengan nama Alfarm Hydroponic. Seiring perkembangan kami hadir dengan identitas baru sebagai Hidroganik Alfa membawa semangat “Hidroponik Organik Untuk Masa Depan sehat”, serta kami menggabungkan teknologi bertanam tanpa tanah dengan prinsip pertanian sehat dan alami, untuk menciptakan solusi tanam yang efisien, bersih, berkelanjutan dan ramah lingkungan. Dengan semangat edukasi dan inovatif serta dipimpin oleh owner yang sudah bersertifikat BNSP (Badan Nasional Sertifikasi Profesi), kami hadir tidak hanya menyediakan produk dan hasil panen tetapi juga membuka akses pelatihan, jasa pembuatan instalasi hidroponik dan pendampingan bagi siapa pun yang ingin memulai hidroponik dari rumah atau skala usaha.
           </p>
-          <div class="pt-2">
-            <img alt="Team working" class="rounded-lg shadow-md w-full max-w-xs aspect-video object-cover" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div>
+              <h3 class="font-bold responsive-text-lg mb-2 text-green-800">VISI</h3>
+              <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">"Menjadi pelopor pertanian hidroponik organik yang sehat, berkelanjutan, berdaya guna dan menjangkau seluruh lapisan masyarakat Indonesia."</p>
+            </div>
+            <div>
+              <h3 class="font-bold responsive-text-lg mb-2 text-green-800">MISI</h3>
+              <ul class="list-disc list-inside text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed space-y-1">
+                <li>Meningkatkan kesadaran masyarakat tentang pentingnya pertanian organik</li>
+                <li>Menjadi mitra dalam pembuatan instalasi hidroponik yang praktis dan produktif</li>
+                <li>Menyediakan layanan edukasi dan pelatihan hidroponik organik dari dasar hingga lanjutan yang mudah dipahami</li>
+                <li>Mengembangkan inovasi pertanian hidroponik organik yang ramah lingkungan</li>
+                <li>Mencetak generasi petani urban yang kreatif, mandiri dan berdaya saing</li>
+                <li>Mendorong kemandirian pangan keluarga di lingkungan urban</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -219,9 +233,6 @@
               <p class="responsive-text-xs mb-3 leading-relaxed">
                 Layanan perawatan kebun hidroponik profesional untuk hasil optimal.
               </p>
-              <a class="text-green-300 responsive-text-xs font-semibold hover:underline" href="#">
-                Read More &gt;
-              </a>
             </div>
             
             <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
@@ -232,9 +243,6 @@
               <p class="responsive-text-xs mb-3 leading-relaxed">
                 Instalasi dan maintenance sistem irigasi hidroponik modern.
               </p>
-              <a class="text-green-300 responsive-text-xs font-semibold hover:underline" href="#">
-                Read More &gt;
-              </a>
             </div>
             
             <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
@@ -245,9 +253,6 @@
               <p class="responsive-text-xs mb-3 leading-relaxed">
                 Perawatan berkala untuk menjaga performa sistem hidroponik.
               </p>
-              <a class="text-green-300 responsive-text-xs font-semibold hover:underline" href="#">
-                Read More &gt;
-              </a>
             </div>
             
             <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
@@ -258,9 +263,6 @@
               <p class="responsive-text-xs mb-3 leading-relaxed">
                 Konsultasi untuk meningkatkan produktivitas kebun hidroponik.
               </p>
-              <a class="text-green-300 responsive-text-xs font-semibold hover:underline" href="#">
-                Read More &gt;
-              </a>
             </div>
           </div>
         </div>
@@ -275,61 +277,85 @@
   <!-- Why Choose Us -->
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        <div>
-          <img alt="Beautiful hydroponic garden" class="rounded-lg shadow-lg w-full aspect-video object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
+        <div class="flex flex-col gap-8 lg:gap-12">
+            <!-- Image Carousel -->
+            <div class="relative w-full max-w-3xl mx-auto" id="documentation-carousel">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="carousel-slides">
+                        <!-- Slide 1 -->
+                        <div class="flex-shrink-0 w-full">
+                            <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 1" class="w-full h-96 object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="flex-shrink-0 w-full">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 2" class="w-full h-96 object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="flex-shrink-0 w-full">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 3" class="w-full h-96 object-cover">
+                        </div>
+                          <!-- Slide 4 -->
+                        <div class="flex-shrink-0 w-full">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 4" class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-slide" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-800 p-2 rounded-full shadow-md z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-slide" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-800 p-2 rounded-full shadow-md z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Text Content -->
+            <div class="space-y-6 sm:space-y-8">
+                <div>
+                    <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Why Choose Us</p>
+                    <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight mb-4">
+                        Kami berkomitmen untuk memberikan yang terbaik dalam setiap layanan yang kami berikan dengan pendekatan yang personal dan profesional.
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <i class="fas fa-award text-green-700 responsive-text-2xl mb-3"></i>
+                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Berpengalaman</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
+                            Lahir dari pengalaman langsung bertani di rumah hingga berkembang menjadi usaha profesional.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <i class="fas fa-cogs text-green-700 responsive-text-2xl mb-3"></i>
+                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Ahli Instalasi</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
+                            Berpengalaman membuat instalasi untuk rumah tangga, sekolah, instansi, komunitas hingga bisnis.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <i class="fas fa-certificate text-green-700 responsive-text-2xl mb-3"></i>
+                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Instruktur Bersertifikasi</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
+                            Dipandu oleh owner yang sudah bersertifikasi BNSP, menjamin mutu materi dan kualitas pembelajaran.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                        <i class="fas fa-lightbulb text-green-700 responsive-text-2xl mb-3"></i>
+                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Materi Aplikatif</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
+                            Peserta tidak hanya belajar teori tetapi juga langsung praktik yang mudah dipahami.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center sm:col-span-2">
+                        <i class="fas fa-hands-helping text-green-700 responsive-text-2xl mb-3"></i>
+                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Pendampingan Berkelanjutan</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
+                            Memberikan support setelah pelatihan agar peserta berhasil mengelola pertanian hidroponik organiknya.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="space-y-6 sm:space-y-8">
-          <div>
-            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Why Choose Us</p>
-            <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight mb-4">
-              Both the heart and the garden may bloom with beauty.
-            </h2>
-            <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm mb-6 leading-relaxed">
-              Kami berkomitmen untuk memberikan yang terbaik dalam setiap layanan yang kami berikan dengan pendekatan yang personal dan profesional.
-            </p>
-            <a class="inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="#">
-              Lihat Paket Kami
-            </a>
-          </div>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div class="bg-white rounded-lg shadow-md p-4 text-center">
-              <i class="fas fa-leaf text-green-700 responsive-text-2xl mb-3"></i>
-              <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Layanan Berkualitas</h3>
-              <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                Standar tinggi dalam setiap layanan yang kami berikan.
-              </p>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-4 text-center">
-              <i class="fas fa-dollar-sign text-green-700 responsive-text-2xl mb-3"></i>
-              <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Harga Terjangkau</h3>
-              <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                Investasi yang sepadan dengan hasil yang didapatkan.
-              </p>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-4 text-center">
-              <i class="fas fa-users text-green-700 responsive-text-2xl mb-3"></i>
-              <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Tim Profesional</h3>
-              <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                Berpengalaman dan bersertifikat di bidangnya.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-green-700 text-green-100 rounded-lg p-4 sm:p-6 max-w-sm">
-            <h3 class="font-semibold responsive-text-sm sm:responsive-text-lg leading-tight mb-2">
-              Best Hydroponic Services In Town
-            </h3>
-            <p class="responsive-text-xs leading-relaxed">
-              Bergabunglah dengan ribuan keluarga yang telah merasakan manfaat hidroponik organik.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -590,17 +616,21 @@
           <ul class="responsive-text-xs space-y-2">
             <li class="flex items-start space-x-2">
               <i class="fas fa-map-marker-alt text-green-300 mt-1 flex-shrink-0"></i>
-              <span>Jl. Hidroponik No. 123, Banjarmasin, Kalimantan Selatan</span>
+              <a href="#" target="_blank" class="hover:underline">JL. Pekapuran Raya Komplek Yatera Gg. Bambu Indah, Kota Banjarmasin</a>
             </li>
             <li class="flex items-center space-x-2">
-              <i class="fas fa-phone text-green-300 flex-shrink-0"></i>
-              <span>+62 812-3456-7890</span>
+              <i class="fab fa-whatsapp text-green-300 flex-shrink-0"></i>
+              <a href="https://wa.me/6282250098693" target="_blank" class="hover:underline">0822 5009 8693</a>
             </li>
             <li class="flex items-center space-x-2">
               <i class="fas fa-envelope text-green-300 flex-shrink-0"></i>
-              <span>info@hidroganikalfa.com</span>
+              <a href="mailto:eboytony@gmail.com" class="hover:underline">eboytony@gmail.com</a>
             </li>
             <li class="flex items-center space-x-2">
+              <i class="fab fa-instagram text-green-300 flex-shrink-0"></i>
+              <a href="https://instagram.com/hidroganikalfa.official" target="_blank" class="hover:underline">@hidroganikalfa.official</a>
+            </li>
+             <li class="flex items-center space-x-2">
               <i class="fas fa-clock text-green-300 flex-shrink-0"></i>
               <span>Senin - Sabtu: 08:00 - 17:00</span>
             </li>
@@ -613,10 +643,6 @@
           <p class="responsive-text-xs text-green-200 text-center sm:text-left">
             Copyright 2024 © Hidroganik Alfa. All Rights Reserved
           </p>
-          <div class="flex space-x-4 responsive-text-xs text-green-200">
-            <a class="hover:underline" href="#">Syarat & Ketentuan</a>
-            <a class="hover:underline" href="#">Kebijakan Privasi</a>
-          </div>
         </div>
       </div>
     </div>
@@ -703,6 +729,55 @@
     document.querySelectorAll('img[data-src]').forEach(img => {
       imageObserver.observe(img);
     });
+
+    // Documentation Carousel
+    const carousel = document.getElementById('documentation-carousel');
+    if (carousel) {
+      const slidesContainer = document.getElementById('carousel-slides');
+      const slides = slidesContainer.children;
+      const nextButton = document.getElementById('next-slide');
+      const prevButton = document.getElementById('prev-slide');
+      const slideCount = slides.length;
+      let currentIndex = 0;
+      let autoPlayInterval;
+
+      const goToSlide = (index) => {
+        if (index < 0) {
+          index = slideCount - 1;
+        } else if (index >= slideCount) {
+          index = 0;
+        }
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+      };
+
+      const startAutoPlay = () => {
+        autoPlayInterval = setInterval(() => {
+          goToSlide(currentIndex + 1);
+        }, 3000); // Change slide every 3 seconds
+      };
+
+      const stopAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+      };
+
+      nextButton.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+        stopAutoPlay();
+        startAutoPlay();
+      });
+
+      prevButton.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+        stopAutoPlay();
+        startAutoPlay();
+      });
+
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      startAutoPlay();
+    }
   </script>
 </body>
 </html>
