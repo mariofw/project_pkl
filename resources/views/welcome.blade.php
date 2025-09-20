@@ -133,55 +133,64 @@
   </section>
 
   <!-- Services Summary -->
-  <section class="bg-green-700 text-green-100">
-    <div class="container-responsive py-8 sm:py-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        <div class="text-center space-y-3 sm:space-y-4">
-          <i class="fas fa-seedling responsive-text-2xl sm:responsive-text-3xl"></i>
-          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Pelatihan & Edukasi</h3>
-          <ul class="responsive-text-xs space-y-1 sm:space-y-2 text-left sm:text-center">
-            <li>• Pelatihan hidroponik organik (pemula – lanjutan)</li>
-            <li>• Pelatihan pembuatan pupuk organik cair (POC)</li>
-            <li>• Pelatihan pembuatan pestisida alami</li>
-            <li>• Workshop urban farming untuk sekolah, instansi pemerintah, komunitas dan masyarakat umum</li>
-          </ul>
+  <section class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+    <div class="container-responsive">
+        <div class="text-center mb-8 sm:mb-12">
+            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
+            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        
-        <div class="text-center space-y-3 sm:space-y-4">
-          <i class="fas fa-tree responsive-text-2xl sm:responsive-text-3xl"></i>
-          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Pendampingan & Konsultasi</h3>
-          <p class="responsive-text-xs">
-            Mendampingi mitra atau peserta pelatihan hingga berhasil mengelola kebun hidroponik secara mandiri.
-          </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <!-- Item 1: Pelatihan & Edukasi -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Pelatihan Hidroponik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Pelatihan & Edukasi</h3>
+                        <p class="text-sm">Pelatihan hidroponik organik dari pemula hingga lanjutan, workshop, dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 2: Pendampingan & Konsultasi -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Konsultasi Pertanian" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Pendampingan & Konsultasi</h3>
+                        <p class="text-sm">Pendampingan mitra hingga berhasil mengelola kebun hidroponik secara mandiri.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3: Pembuatan Instalasi -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Instalasi Hidroponik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Pembuatan Instalasi</h3>
+                        <p class="text-sm">Jasa pembuatan instalasi hidroponik untuk berbagai skala kebutuhan.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 4: Produk Pertanian -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Produk Organik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1579113800036-3b6b748c3c39?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Produk Pertanian Organik</h3>
+                        <p class="text-sm">Menjual hasil panen segar, pupuk, benih, dan sarana produksi lainnya.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="text-center space-y-3 sm:space-y-4">
-          <i class="fas fa-tools responsive-text-2xl sm:responsive-text-3xl"></i>
-          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Pembuatan Instalasi Hidroponik</h3>
-          <p class="responsive-text-xs">
-            Menyediakan jasa pembuatan instalasi hidroponik sesuai kebutuhan rumah tangga, sekolah, instansi pemerintah, komunitas, hingga bisnis komersial.
-          </p>
-        </div>
-        
-        <div class="text-center space-y-3 sm:space-y-4">
-          <i class="fas fa-shopping-cart responsive-text-2xl sm:responsive-text-3xl"></i>
-          <h3 class="font-semibold responsive-text-sm sm:responsive-text-base">Produk Pertanian Organik</h3>
-          <p class="responsive-text-xs">
-            Menjual hasil panen hidroponik organik segar yang sehat, serta menyediakan pupuk organik, pestisida alami, benih, bibit, dan sarana produksi hidroponik lainnya.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-        <div>
-          <img alt="Garden aerial view" class="w-full rounded-lg shadow-lg aspect-video object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
-        </div>
-        <div class="space-y-4 sm:space-y-6">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+              <div class="rounded-lg shadow-xl overflow-hidden">
+                <img alt="Garden aerial view" class="w-full aspect-video object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
+              </div>        <div class="space-y-4 sm:space-y-6">
           <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">TENTANG KAMI</p>
           <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight">
             Hidroponik Organik Untuk Masa Depan Sehat
@@ -212,64 +221,54 @@
   </section>
 
   <!-- What We Offer -->
-  <section class="bg-green-700 text-green-100 py-8 sm:py-12 lg:py-16">
+  <section class="bg-green-700 text-green-100 py-6 sm:py-8">
     <div class="container-responsive">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <div class="space-y-6 sm:space-y-8">
-          <div>
-            <p class="text-green-300 font-semibold responsive-text-xs uppercase tracking-wider mb-2">What We Offer</p>
-            <h2 class="responsive-text-xl sm:responsive-text-2xl lg:responsive-text-3xl font-bold leading-tight max-w-md">
-              Let your home have a breath of fresh air.
-            </h2>
-          </div>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
-              <div class="flex items-center space-x-3 mb-3">
-                <i class="fas fa-seedling responsive-text-lg"></i>
-                <h3 class="font-semibold responsive-text-sm">Perawatan Kebun</h3>
-              </div>
-              <p class="responsive-text-xs mb-3 leading-relaxed">
-                Layanan perawatan kebun hidroponik profesional untuk hasil optimal.
-              </p>
-            </div>
-            
-            <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
-              <div class="flex items-center space-x-3 mb-3">
-                <i class="fas fa-tint responsive-text-lg"></i>
-                <h3 class="font-semibold responsive-text-sm">Sistem Irigasi</h3>
-              </div>
-              <p class="responsive-text-xs mb-3 leading-relaxed">
-                Instalasi dan maintenance sistem irigasi hidroponik modern.
-              </p>
-            </div>
-            
-            <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
-              <div class="flex items-center space-x-3 mb-3">
-                <i class="fas fa-tools responsive-text-lg"></i>
-                <h3 class="font-semibold responsive-text-sm">Maintenance</h3>
-              </div>
-              <p class="responsive-text-xs mb-3 leading-relaxed">
-                Perawatan berkala untuk menjaga performa sistem hidroponik.
-              </p>
-            </div>
-            
-            <div class="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md">
-              <div class="flex items-center space-x-3 mb-3">
-                <i class="fas fa-chart-line responsive-text-lg"></i>
-                <h3 class="font-semibold responsive-text-sm">Optimasi Hasil</h3>
-              </div>
-              <p class="responsive-text-xs mb-3 leading-relaxed">
-                Konsultasi untuk meningkatkan produktivitas kebun hidroponik.
-              </p>
-            </div>
-          </div>
+        <div class="text-center mb-8 sm:mb-12">
+            <p class="text-green-200 font-semibold responsive-text-xs uppercase tracking-wider mb-2">What We Offer</p>
+            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl mb-4">Let your home have a breath of fresh air.</h2>
         </div>
-        
-        <div>
-          <img alt="Farmer with vegetables" class="rounded-lg shadow-lg w-full aspect-square sm:aspect-video lg:aspect-square object-cover" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <!-- Item 1: Perawatan Kebun -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Perawatan Kebun" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Perawatan Kebun</h3>
+                        <p class="text-sm">Layanan perawatan kebun hidroponik profesional untuk hasil optimal.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 2: Sistem Irigasi -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Sistem Irigasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Sistem Irigasi</h3>
+                        <p class="text-sm">Instalasi dan maintenance sistem irigasi hidroponik modern.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3: Maintenance -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Maintenance" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542928658-22251e20ac66?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Maintenance</h3>
+                        <p class="text-sm">Perawatan berkala untuk menjaga performa sistem hidroponik.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 4: Optimasi Hasil -->
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="Optimasi Hasil" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Optimasi Hasil</h3>
+                        <p class="text-sm">Konsultasi untuk meningkatkan produktivitas kebun hidroponik.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </section>
 
@@ -316,41 +315,66 @@
                     </h2>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
-                        <i class="fas fa-award text-green-700 responsive-text-2xl mb-3"></i>
-                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Berpengalaman</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                            Lahir dari pengalaman langsung bertani di rumah hingga berkembang menjadi usaha profesional.
-                        </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+                    <!-- Item 1: Berpengalaman -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Berpengalaman" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Berpengalaman</h3>
+                                <p class="text-sm">Lahir dari pengalaman langsung bertani di rumah hingga berkembang menjadi usaha profesional.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
-                        <i class="fas fa-cogs text-green-700 responsive-text-2xl mb-3"></i>
-                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Ahli Instalasi</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                            Berpengalaman membuat instalasi untuk rumah tangga, sekolah, instansi, komunitas hingga bisnis.
-                        </p>
+                    <!-- Item 2: Ahli Instalasi -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Ahli Instalasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Ahli Instalasi</h3>
+                                <p class="text-sm">Berpengalaman membuat instalasi untuk rumah tangga, sekolah, instansi, komunitas hingga bisnis.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
-                        <i class="fas fa-certificate text-green-700 responsive-text-2xl mb-3"></i>
-                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Instruktur Bersertifikasi</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                            Dipandu oleh owner yang sudah bersertifikasi BNSP, menjamin mutu materi dan kualitas pembelajaran.
-                        </p>
+                    <!-- Item 3: Instruktur Bersertifikasi -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Instruktur Bersertifikasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Instruktur Bersertifikasi</h3>
+                                <p class="text-sm">Dipandu oleh owner yang sudah bersertifikasi BNSP, menjamin mutu materi.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-4 text-center">
-                        <i class="fas fa-lightbulb text-green-700 responsive-text-2xl mb-3"></i>
-                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Materi Aplikatif</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                            Peserta tidak hanya belajar teori tetapi juga langsung praktik yang mudah dipahami.
-                        </p>
+                    <!-- Item 4: Materi Aplikatif -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Materi Aplikatif" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Materi Aplikatif</h3>
+                                <p class="text-sm">Peserta tidak hanya belajar teori tetapi juga langsung praktik yang mudah dipahami.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-4 text-center sm:col-span-2">
-                        <i class="fas fa-hands-helping text-green-700 responsive-text-2xl mb-3"></i>
-                        <h3 class="font-semibold responsive-text-xs sm:responsive-text-sm mb-2">Pendampingan Berkelanjutan</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed">
-                            Memberikan support setelah pelatihan agar peserta berhasil mengelola pertanian hidroponik organiknya.
-                        </p>
+                    <!-- Item 5: Pendampingan Berkelanjutan -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Pendampingan Berkelanjutan" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Pendampingan Berkelanjutan</h3>
+                                <p class="text-sm">Memberikan support setelah pelatihan agar peserta berhasil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6: Komunitas Pembelajar -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Komunitas Pembelajar" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Komunitas Pembelajar</h3>
+                                <p class="text-sm">Bergabung dengan komunitas untuk berbagi pengalaman dan pengetahuan.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -448,10 +472,42 @@
       </div>
       
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-        <img alt="Hydroponic project 1" class="rounded-lg shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-        <img alt="Hydroponic project 2" class="rounded-lg shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-        <img alt="Hydroponic project 3" class="rounded-lg shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-        <img alt="Hydroponic project 4" class="rounded-lg shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+          <img alt="Hydroponic project 1" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div class="text-center text-white p-4">
+              <h3 class="font-bold text-lg">Instalasi Hidroponik</h3>
+              <p class="text-sm">Proyek instalasi hidroponik untuk skala rumah tangga.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+          <img alt="Hydroponic project 2" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div class="text-center text-white p-4">
+              <h3 class="font-bold text-lg">Kebun Komunitas</h3>
+              <p class="text-sm">Pengembangan kebun hidroponik untuk komunitas urban.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+          <img alt="Hydroponic project 3" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div class="text-center text-white p-4">
+              <h3 class="font-bold text-lg">Greenhouse Komersial</h3>
+              <p class="text-sm">Proyek skala besar untuk produksi sayuran organik.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+          <img alt="Hydroponic project 4" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div class="text-center text-white p-4">
+              <h3 class="font-bold text-lg">Edukasi Sekolah</h3>
+              <p class="text-sm">Program edukasi hidroponik untuk siswa sekolah.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -509,51 +565,40 @@
         <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Berita & Blog Terbaru Kami</h2>
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-          <img alt="Blog post 1" class="w-full h-48 sm:h-56 object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-          <div class="p-4 sm:p-6">
-            <h3 class="font-semibold responsive-text-sm sm:responsive-text-base mb-3 leading-tight">
-              Tips Memulai Hidroponik di Rumah untuk Pemula
-            </h3>
-            <p class="responsive-text-xs text-gray-600 mb-4 leading-relaxed">
-              Panduan lengkap untuk memulai bercocok tanam hidroponik di rumah dengan modal minimal dan hasil maksimal.
-            </p>
-            <a class="text-green-700 responsive-text-xs font-semibold hover:underline" href="#">
-              Baca Selengkapnya
-            </a>
-          </div>
-        </article>
-        
-        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-          <img alt="Blog post 2" class="w-full h-48 sm:h-56 object-cover" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-          <div class="p-4 sm:p-6">
-            <h3 class="font-semibold responsive-text-sm sm:responsive-text-base mb-3 leading-tight">
-              Manfaat Pupuk Organik Cair untuk Tanaman Hidroponik
-            </h3>
-            <p class="responsive-text-xs text-gray-600 mb-4 leading-relaxed">
-              Mengapa pupuk organik cair menjadi pilihan terbaik untuk sistem hidroponik yang sehat dan berkelanjutan.
-            </p>
-            <a class="text-green-700 responsive-text-xs font-semibold hover:underline" href="#">
-              Baca Selengkapnya
-            </a>
-          </div>
-        </article>
-        
-        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-1">
-          <img alt="Blog post 3" class="w-full h-48 sm:h-56 object-cover" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-          <div class="p-4 sm:p-6">
-            <h3 class="font-semibold responsive-text-sm sm:responsive-text-base mb-3 leading-tight">
-              Sukses Berbisnis Sayuran Hidroponik di Era Digital
-            </h3>
-            <p class="responsive-text-xs text-gray-600 mb-4 leading-relaxed">
-              Strategi membangun bisnis sayuran hidroponik yang menguntungkan dengan memanfaatkan teknologi digital.
-            </p>
-            <a class="text-green-700 responsive-text-xs font-semibold hover:underline" href="#">
-              Baca Selengkapnya
-            </a>
-          </div>
-        </article>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+            <img alt="Blog post 1" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
+            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <a href="#" class="w-full h-full">
+                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
+                        <h3 class="font-bold text-lg mb-2">Tips Memulai Hidroponik di Rumah untuk Pemula</h3>
+                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+            <img alt="Blog post 2" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
+            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <a href="#" class="w-full h-full">
+                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
+                        <h3 class="font-bold text-lg mb-2">Manfaat Pupuk Organik Cair untuk Tanaman Hidroponik</h3>
+                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="relative group rounded-lg overflow-hidden shadow-lg">
+            <img alt="Blog post 3" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
+            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <a href="#" class="w-full h-full">
+                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
+                        <h3 class="font-bold text-lg mb-2">Sukses Berbisnis Sayuran Hidroponik di Era Digital</h3>
+                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
+                    </div>
+                </a>
+            </div>
+        </div>
       </div>
     </div>
   </section>
@@ -564,9 +609,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
         <div class="sm:col-span-2 lg:col-span-1">
           <div class="flex items-center space-x-2 mb-4">
-            <div class="w-10 h-10 bg-green-900 rounded-full flex items-center justify-center">
-              <i class="fas fa-leaf text-white"></i>
-            </div>
+            <img alt="Team photo" class="h-10 w-auto bg-white rounded-full p-1" src="{{ asset('images/Logo_HA.png') }}"/>
             <span class="font-bold responsive-text-lg">HIDROGANIK ALFA</span>
           </div>
           <p class="responsive-text-xs max-w-xs mb-4 leading-relaxed">
