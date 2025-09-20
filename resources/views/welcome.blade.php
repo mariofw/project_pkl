@@ -76,17 +76,18 @@
         </div>
         <!-- Desktop Menu -->
         <ul class="hidden lg:flex space-x-4 xl:space-x-8 responsive-text-sm font-semibold text-gray-700">
-          <li><a class="hover:text-green-700 transition-colors" href="#">Home</a></li>
-          <li><a class="hover:text-green-700 transition-colors" href="#">About</a></li>
-          <li><a class="hover:text-green-700 transition-colors" href="#">Services</a></li>
-          <li><a class="hover:text-green-700 transition-colors" href="#">Pages</a></li>
-          <li><a class="hover:text-green-700 transition-colors" href="#">Blog</a></li>
+          <li><a class="hover:text-green-700 transition-colors" href="/">Home</a></li>
+          @auth
+            <li><a class="hover:text-green-700 transition-colors" href="{{ url('/dashboard') }}">Dashboard</a></li>
+          @endauth
         </ul>
         
         <div class="flex items-center space-x-2">
-          <a class="hidden sm:inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-3 sm:px-4 py-2 rounded transition-colors" href="/login">
+        @guest
+          <a class="hidden sm:inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-3 sm:px-4 py-2 rounded transition-colors" href="{{ route('login') }}">
             Login
           </a>
+        @endguest
           <button aria-label="Toggle menu" class="lg:hidden text-green-900 focus:outline-none p-2" id="mobile-menu-button">
             <i class="fas fa-bars responsive-text-lg"></i>
           </button>
@@ -96,12 +97,13 @@
       <!-- Mobile menu -->
       <div class="mobile-menu-transition lg:hidden bg-white border-t border-gray-200" id="mobile-menu">
         <ul class="flex flex-col space-y-3 px-4 py-4 text-gray-700 font-semibold responsive-text-sm">
-          <li><a class="block hover:text-green-700 py-1" href="#">Home</a></li>
-          <li><a class="block hover:text-green-700 py-1" href="#">About</a></li>
-          <li><a class="block hover:text-green-700 py-1" href="#">Services</a></li>
-          <li><a class="block hover:text-green-700 py-1" href="#">Pages</a></li>
-          <li><a class="block hover:text-green-700 py-1" href="#">Blog</a></li>
-          <li class="sm:hidden"><a class="block bg-green-700 text-white text-center py-2 rounded hover:bg-green-800" href="/login">Login</a></li>
+          <li><a class="block hover:text-green-700 py-1" href="/">Home</a></li>
+          @auth
+            <li><a class="block hover:text-green-700 py-1" href="{{ url('/dashboard') }}">Dashboard</a></li>
+          @endauth
+          @guest
+          <li class="sm:hidden"><a class="block bg-green-700 text-white text-center py-2 rounded hover:bg-green-800" href="{{ route('login') }}">Login</a></li>
+          @endguest
         </ul>
       </div>
     </div>
@@ -111,25 +113,19 @@
   <section class="relative overflow-hidden">
     <div class="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]" id="hero-carousel">
         <div class="overflow-hidden w-full h-full">
-            <div class="flex transition-transform duration-1000 ease-in-out h-full" id="hero-carousel-slides">
-                <!-- Slide 1 -->
-                <div class="flex-shrink-0 w-full h-full">
-                    <img alt="Background Image 1" class="w-full h-full object-cover" src="{{ $hero->image_path ? asset('storage/' . $hero->image_path) : asset('images/Gambar_Bersama.jpg') }}"/>
-                </div>
-                <!-- Slide 2 -->
-                <div class="flex-shrink-0 w-full h-full">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 2" class="w-full h-full object-cover">
-                </div>
-                <!-- Slide 3 -->
-                <div class="flex-shrink-0 w-full h-full">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 3" class="w-full h-full object-cover">
-                </div>
-                <!-- Slide 4 -->
-                <div class="flex-shrink-0 w-full h-full">
-                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 4" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
+                            <div class="flex transition-transform duration-1000 ease-in-out h-full" id="hero-carousel-slides">
+                                @if($heroImages->count() > 0)
+                                    @foreach($heroImages as $image)
+                                        <div class="flex-shrink-0 w-full h-full">
+                                            <img alt="Background Image" class="w-full h-full object-cover" src="{{ asset('storage/' . $image->image_path) }}"/>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="flex-shrink-0 w-full h-full">
+                                        <img alt="Background Image" class="w-full h-full object-cover" src="{{ asset('images/Gambar_Bersama.jpg') }}"/>
+                                    </div>
+                                @endif
+                            </div>        </div>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     </div>
     <div class="absolute inset-0 flex items-center">
@@ -156,92 +152,63 @@
   </section>
 
   <!-- Services Summary -->
-  <section class="py-8 sm:py-12 lg:py-16 bg-green-50">
+<section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
             <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
             <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
-          
-          <!-- Pelatihan dan Edukasi -->
-          <div>
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
-              <i class="fas fa-chalkboard-teacher text-2xl"></i>
-            </div>
-            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pelatihan & Edukasi</h3>
-            <ul class="responsive-text-xs text-gray-600 space-y-2 text-left list-disc list-inside">
-              <li>Pelatihan hidroponik organik (pemula – lanjutan)</li>
-              <li>Pelatihan pembuatan pupuk organik cair (POC)</li>
-              <li>Pelatihan pembuatan pestisida alami</li>
-              <li>Workshop urban farming untuk sekolah, instansi, komunitas dan masyarakat umum</li>
-            </ul>
-          </div>
-          
-          <!-- Pembuatan Instalasi -->
-          <div>
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
-              <i class="fas fa-cogs text-2xl"></i>
-            </div>
-            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pembuatan Instalasi Hidroponik</h3>
-            <p class="responsive-text-xs text-gray-600">Menyediakan jasa pembuatan instalasi hidroponik sesuai kebutuhan rumah tangga, sekolah, instansi pemerintah, komunitas, hingga bisnis komersial.</p>
-          </div>
-          
-          <!-- Produk Pertanian Organik -->
-          <div>
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
-              <i class="fas fa-leaf text-2xl"></i>
-            </div>
-            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Produk Pertanian Organik</h3>
-            <p class="responsive-text-xs text-gray-600">Menjual hasil panen hidroponik organik segar yang sehat.</p>
-          </div>
-          
-          <!-- Pendampingan dan Konsultasi -->
-          <div>
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
-              <i class="fas fa-hands-helping text-2xl"></i>
-            </div>
-            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pendampingan & Konsultasi</h3>
-            <p class="responsive-text-xs text-gray-600">Mendampingi mitra atau peserta pelatihan hingga berhasil mengelola kebun hidroponik secara mandiri.</p>
-          </div>
-          
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+            @foreach ($services as $service)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    <div class="h-48 overflow-hidden">
+                        <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col">
+                        <h3 class="font-bold responsive-text-lg mb-2 text-gray-800">{{ $service->title }}</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed flex-grow">{{ $service->description }}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
-  </section>
+</section>
 
   <!-- About Section -->
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-              <div class="rounded-lg shadow-xl overflow-hidden">
+        @if ($about)
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            <div class="rounded-lg shadow-xl overflow-hidden">
                 <img alt="Garden aerial view" class="w-full aspect-video object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
-              </div>        <div class="space-y-4 sm:space-y-6">
-          <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">TENTANG KAMI</p>
-          <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight">
-            Hidroponik Organik Untuk Masa Depan Sehat
-          </h2>
-          <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
-            Hidroganik Alfa adalah usaha pertanian modern yang fokus pada pengembangan sistem hidroponik organik untuk masyarakat urban yang berdiri sejak tahun 2019. Sebelumnya dikenal dengan nama Alfarm Hydroponic. Seiring perkembangan kami hadir dengan identitas baru sebagai Hidroganik Alfa membawa semangat “Hidroponik Organik Untuk Masa Depan sehat”, serta kami menggabungkan teknologi bertanam tanpa tanah dengan prinsip pertanian sehat dan alami, untuk menciptakan solusi tanam yang efisien, bersih, berkelanjutan dan ramah lingkungan. Dengan semangat edukasi dan inovatif serta dipimpin oleh owner yang sudah bersertifikat BNSP (Badan Nasional Sertifikasi Profesi), kami hadir tidak hanya menyediakan produk dan hasil panen tetapi juga membuka akses pelatihan, jasa pembuatan instalasi hidroponik dan pendampingan bagi siapa pun yang ingin memulai hidroponik dari rumah atau skala usaha.
-          </p>
-          <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div>
-              <h3 class="font-bold responsive-text-lg mb-2 text-green-800">VISI</h3>
-              <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">"Menjadi pelopor pertanian hidroponik organik yang sehat, berkelanjutan, berdaya guna dan menjangkau seluruh lapisan masyarakat Indonesia."</p>
             </div>
-            <div>
-              <h3 class="font-bold responsive-text-lg mb-2 text-green-800">MISI</h3>
-              <ul class="list-disc list-inside text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed space-y-1">
-                <li>Meningkatkan kesadaran masyarakat tentang pentingnya pertanian organik</li>
-                <li>Menjadi mitra dalam pembuatan instalasi hidroponik yang praktis dan produktif</li>
-                <li>Menyediakan layanan edukasi dan pelatihan hidroponik organik dari dasar hingga lanjutan yang mudah dipahami</li>
-                <li>Mengembangkan inovasi pertanian hidroponik organik yang ramah lingkungan</li>
-                <li>Mencetak generasi petani urban yang kreatif, mandiri dan berdaya saing</li>
-                <li>Mendorong kemandirian pangan keluarga di lingkungan urban</li>
-              </ul>
+            <div class="space-y-4 sm:space-y-6">
+                <div>
+                    <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">TENTANG KAMI</p>
+                    <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight">
+                        Hidroponik Organik Untuk Masa Depan Sehat
+                    </h2>
+                    <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
+                        {{ $about->tentang_kami }}
+                    </p>
+                </div>
+                <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                    <div>
+                        <h3 class="font-bold responsive-text-lg mb-2 text-green-800">VISI</h3>
+                        <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">{{ $about->visi }}</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold responsive-text-lg mb-2 text-green-800">MISI</h3>
+                        <ul class="list-disc list-inside text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed space-y-1">
+                            @foreach (explode('\n', $about->misi) as $misi_item)
+                                <li>{{ $misi_item }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        @endif
     </div>
   </section>
 

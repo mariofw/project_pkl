@@ -33,7 +33,7 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $service->order }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-16 h-16 object-cover rounded">
+                                        <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-32 h-32 object-cover">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $service->title }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

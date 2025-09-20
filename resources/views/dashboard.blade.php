@@ -26,6 +26,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mt-6">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <h3 class="text-lg font-semibold mb-4">Manage About Me</h3>
+                    <div class="grid grid-cols-1">
+                        <a href="{{ route('admin.abouts.edit') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-center transition">
+                            Edit
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>

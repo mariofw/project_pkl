@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Models\About;
 use App\Models\HeroSection;
+use App\Models\HeroSectionImage;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
@@ -12,8 +14,10 @@ Route::get('/', function () {
         'title' => 'Welcome to Our Website',
         'subtitle' => 'This is a default subtitle. Please edit it in the admin panel.',
     ]);
+    $heroImages = HeroSectionImage::all();
     $services = Service::orderBy('order')->get();
-    return view('welcome', compact('hero', 'services'));
+    $about = About::first();
+    return view('welcome', compact('hero', 'heroImages', 'services', 'about'));
 });
 
 Route::get('/dashboard', function () {
@@ -31,7 +35,13 @@ Route::middleware('auth')->group(function () {
 
     // Route untuk mengelola Services
     Route::resource('/admin/services', App\Http\Controllers\Admin\ServiceController::class)->names('admin.services');
+
+    // Route untuk mengelola Abouts
+    Route::get('/admin/abouts', [App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('admin.abouts.edit');
+    Route::patch('/admin/abouts', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('admin.abouts.update');
+
+    // Route untuk mengelola Hero Section Images
+    Route::resource('/admin/hero-images', App\Http\Controllers\Admin\HeroSectionImageController::class)->names('admin.hero-images');
 });
 
 require __DIR__.'/auth.php';
-
