@@ -109,8 +109,27 @@
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden">
-    <div class="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]">
-      <img alt="Team photo" class="w-full h-full object-cover" src="{{ asset('images/Gambar_Bersama.jpg') }}"/>
+    <div class="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]" id="hero-carousel">
+        <div class="overflow-hidden w-full h-full">
+            <div class="flex transition-transform duration-1000 ease-in-out h-full" id="hero-carousel-slides">
+                <!-- Slide 1 -->
+                <div class="flex-shrink-0 w-full h-full">
+                    <img alt="Background Image 1" class="w-full h-full object-cover" src="{{ $hero->image_path ? asset('storage/' . $hero->image_path) : asset('images/Gambar_Bersama.jpg') }}"/>
+                </div>
+                <!-- Slide 2 -->
+                <div class="flex-shrink-0 w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 2" class="w-full h-full object-cover">
+                </div>
+                <!-- Slide 3 -->
+                <div class="flex-shrink-0 w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 3" class="w-full h-full object-cover">
+                </div>
+                <!-- Slide 4 -->
+                <div class="flex-shrink-0 w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Background Image 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     </div>
     <div class="absolute inset-0 flex items-center">
@@ -121,65 +140,71 @@
             <span>Pelatihan & Edukasi</span>
           </div>
           <h1 class="responsive-text-2xl sm:responsive-text-3xl md:responsive-text-4xl lg:responsive-text-5xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6">
-            Hidroponik Organik<br class="hidden sm:block"/>
-            untuk masa depan sehat
+            {!! nl2br(e($hero->title)) !!}
           </h1>
           <p class="responsive-text-xs sm:responsive-text-sm max-w-lg mb-4 sm:mb-6 leading-relaxed">
-            Hidroganik Alfa adalah usaha pertanian modern yang fokus pada pengembangan sistem hidroponik organik untuk masyarakat urban yang berdiri sejak tahun 2019.
+            {{ $hero->subtitle }}
           </p>
+          @if($hero->button_text && $hero->button_link)
+            <a class="inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="{{ $hero->button_link }}">
+              {{ $hero->button_text }}
+            </a>
+          @endif
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services Summary -->
-  <section class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+  <section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
             <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
             <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            <!-- Item 1: Pelatihan & Edukasi -->
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Pelatihan Hidroponik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div class="text-center text-white p-4">
-                        <h3 class="font-bold text-lg mb-2">Pelatihan & Edukasi</h3>
-                        <p class="text-sm">Pelatihan hidroponik organik dari pemula hingga lanjutan, workshop, dan lainnya.</p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
+          
+          <!-- Pelatihan dan Edukasi -->
+          <div>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
+              <i class="fas fa-chalkboard-teacher text-2xl"></i>
             </div>
-            <!-- Item 2: Pendampingan & Konsultasi -->
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Konsultasi Pertanian" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div class="text-center text-white p-4">
-                        <h3 class="font-bold text-lg mb-2">Pendampingan & Konsultasi</h3>
-                        <p class="text-sm">Pendampingan mitra hingga berhasil mengelola kebun hidroponik secara mandiri.</p>
-                    </div>
-                </div>
+            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pelatihan & Edukasi</h3>
+            <ul class="responsive-text-xs text-gray-600 space-y-2 text-left list-disc list-inside">
+              <li>Pelatihan hidroponik organik (pemula – lanjutan)</li>
+              <li>Pelatihan pembuatan pupuk organik cair (POC)</li>
+              <li>Pelatihan pembuatan pestisida alami</li>
+              <li>Workshop urban farming untuk sekolah, instansi, komunitas dan masyarakat umum</li>
+            </ul>
+          </div>
+          
+          <!-- Pembuatan Instalasi -->
+          <div>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
+              <i class="fas fa-cogs text-2xl"></i>
             </div>
-            <!-- Item 3: Pembuatan Instalasi -->
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Instalasi Hidroponik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div class="text-center text-white p-4">
-                        <h3 class="font-bold text-lg mb-2">Pembuatan Instalasi</h3>
-                        <p class="text-sm">Jasa pembuatan instalasi hidroponik untuk berbagai skala kebutuhan.</p>
-                    </div>
-                </div>
+            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pembuatan Instalasi Hidroponik</h3>
+            <p class="responsive-text-xs text-gray-600">Menyediakan jasa pembuatan instalasi hidroponik sesuai kebutuhan rumah tangga, sekolah, instansi pemerintah, komunitas, hingga bisnis komersial.</p>
+          </div>
+          
+          <!-- Produk Pertanian Organik -->
+          <div>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
+              <i class="fas fa-leaf text-2xl"></i>
             </div>
-            <!-- Item 4: Produk Pertanian -->
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Produk Organik" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1579113800036-3b6b748c3c39?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
-                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div class="text-center text-white p-4">
-                        <h3 class="font-bold text-lg mb-2">Produk Pertanian Organik</h3>
-                        <p class="text-sm">Menjual hasil panen segar, pupuk, benih, dan sarana produksi lainnya.</p>
-                    </div>
-                </div>
+            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Produk Pertanian Organik</h3>
+            <p class="responsive-text-xs text-gray-600">Menjual hasil panen hidroponik organik segar yang sehat.</p>
+          </div>
+          
+          <!-- Pendampingan dan Konsultasi -->
+          <div>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-700 text-white mx-auto mb-4">
+              <i class="fas fa-hands-helping text-2xl"></i>
             </div>
+            <h3 class="font-bold responsive-text-lg mb-3 text-gray-800">Pendampingan & Konsultasi</h3>
+            <p class="responsive-text-xs text-gray-600">Mendampingi mitra atau peserta pelatihan hingga berhasil mengelola kebun hidroponik secara mandiri.</p>
+          </div>
+          
         </div>
     </div>
   </section>
@@ -771,6 +796,31 @@
     document.querySelectorAll('img[data-src]').forEach(img => {
       imageObserver.observe(img);
     });
+
+    // Hero Carousel
+    const heroCarousel = document.getElementById('hero-carousel');
+    if (heroCarousel) {
+      const slidesContainer = document.getElementById('hero-carousel-slides');
+      if (slidesContainer) {
+        const slides = slidesContainer.children;
+        const slideCount = slides.length;
+        let currentIndex = 0;
+
+        const goToSlide = (index) => {
+          if (index < 0) {
+            index = slideCount - 1;
+          } else if (index >= slideCount) {
+            index = 0;
+          }
+          slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+          currentIndex = index;
+        };
+
+        setInterval(() => {
+          goToSlide(currentIndex + 1);
+        }, 3000); // Change slide every 3 seconds
+      }
+    }
 
     // Documentation Carousel
     const carousel = document.getElementById('documentation-carousel');
