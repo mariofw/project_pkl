@@ -1,23 +1,29 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\HeroSectionController;
+use App\Http\Controllers\Admin\HeroSectionImageController;
+use App\Http\Controllers\Admin\DocumentationImageController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Models\About;
+use App\Models\DocumentationImage;
 use App\Models\HeroSection;
 use App\Models\HeroSectionImage;
 use App\Models\Service;
-use Illuminate\Support\Facades\Route;
-
+use App\Models\Product;
 
 Route::get('/', function () {
-    $hero = HeroSection::firstOrNew([], [
-        'title' => 'Welcome to Our Website',
-        'subtitle' => 'This is a default subtitle. Please edit it in the admin panel.',
-    ]);
+    $hero = HeroSection::first() ?? new HeroSection(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
+    $services = Service::all();
     $heroImages = HeroSectionImage::all();
-    $services = Service::orderBy('order')->get();
     $about = About::first();
-    return view('welcome', compact('hero', 'heroImages', 'services', 'about'));
+    $documentationImages = DocumentationImage::all();
+    $products = Product::all();
+    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products'));
 });
 
 Route::get('/dashboard', function () {
@@ -28,20 +34,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    // Route untuk mengelola Hero Section
-    Route::get('/admin/hero', [App\Http\Controllers\Admin\HeroSectionController::class, 'edit'])->name('admin.hero.edit');
-    Route::patch('/admin/hero', [App\Http\Controllers\Admin\HeroSectionController::class, 'update'])->name('admin.hero.update');
-
-    // Route untuk mengelola Services
-    Route::resource('/admin/services', App\Http\Controllers\Admin\ServiceController::class)->names('admin.services');
-
-    // Route untuk mengelola Abouts
-    Route::get('/admin/abouts', [App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('admin.abouts.edit');
-    Route::patch('/admin/abouts', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('admin.abouts.update');
-
-    // Route untuk mengelola Hero Section Images
-    Route::resource('/admin/hero-images', App\Http\Controllers\Admin\HeroSectionImageController::class)->names('admin.hero-images');
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/hero', [HeroSectionController::class, 'edit'])->name('hero.edit');
+    Route::post('/hero', [HeroSectionController::class, 'update'])->name('hero.update');
+    Route::resource('hero-images', HeroSectionImageController::class)->except(['show']);
+    Route::resource('services', ServiceController::class)->except(['show']);
+    Route::get('/abouts', [AboutController::class, 'edit'])->name('abouts.edit');
+    Route::post('/abouts', [AboutController::class, 'update'])->name('abouts.update');
+    Route::resource('documentation-images', DocumentationImageController::class)->except(['show']);
+    Route::resource('products', ProductController::class)->except(['show']);
+    Route::resource('articles', ArticleController::class)->except(['show']);
 });
 
 require __DIR__.'/auth.php';

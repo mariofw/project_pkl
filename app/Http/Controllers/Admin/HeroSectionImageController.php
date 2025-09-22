@@ -43,13 +43,47 @@ class HeroSectionImageController extends Controller
             'image_path' => $path,
         ]);
 
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Image uploaded successfully.']);
+        }
+
         return redirect()->route('admin.hero-images.index')->with('success', 'Image uploaded successfully.');
     }
 
-    public function destroy(HeroSectionImage $hero_image)
+    public function edit(HeroSectionImage $hero_image)
+    {
+        return view('admin.hero-images.edit', ['image' => $hero_image]);
+    }
+
+    public function update(Request $request, HeroSectionImage $hero_image)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        Storage::disk('public')->delete($hero_image->image_path);
+
+        $path = $request->file('image')->store('hero_images', 'public');
+
+        $hero_image->update([
+            'image_path' => $path,
+        ]);
+
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Image updated successfully.']);
+        }
+
+        return redirect()->route('admin.hero-images.index')->with('success', 'Image updated successfully.');
+    }
+
+    public function destroy(Request $request, HeroSectionImage $hero_image)
     {
         Storage::disk('public')->delete($hero_image->image_path);
         $hero_image->delete();
+
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Image deleted successfully.']);
+        }
 
         return redirect()->route('admin.hero-images.index')->with('success', 'Image deleted successfully.');
     }

@@ -128,12 +128,12 @@
                             </div>        </div>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     </div>
-    <div class="absolute inset-0 flex items-center">
+    <div class="absolute inset-0 flex items-center">  
       <div class="container-responsive">
         <div class="max-w-xl text-white">
           <div class="flex items-center space-x-2 responsive-text-xs sm:responsive-text-sm font-semibold text-green-300 mb-2 sm:mb-4">
             <i class="fas fa-seedling"></i>
-            <span>Pelatihan & Edukasi</span>
+            <span>HIDROGRANIK ALFA</span>
           </div>
           <h1 class="responsive-text-2xl sm:responsive-text-3xl md:responsive-text-4xl lg:responsive-text-5xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6">
             {!! nl2br(e($hero->title)) !!}
@@ -272,22 +272,21 @@
             <div class="relative w-full max-w-3xl mx-auto" id="documentation-carousel">
                 <div class="overflow-hidden rounded-lg shadow-lg">
                     <div class="flex transition-transform duration-500 ease-in-out" id="carousel-slides">
-                        <!-- Slide 1 -->
-                        <div class="flex-shrink-0 w-full">
-                            <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 1" class="w-full h-96 object-cover">
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="flex-shrink-0 w-full">
-                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 2" class="w-full h-96 object-cover">
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="flex-shrink-0 w-full">
-                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 3" class="w-full h-96 object-cover">
-                        </div>
-                          <!-- Slide 4 -->
-                        <div class="flex-shrink-0 w-full">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 4" class="w-full h-96 object-cover">
-                        </div>
+                        @if($documentationImages->count() > 0)
+                            @foreach($documentationImages as $image)
+                                <div class="flex-shrink-0 w-full">
+                                    <img src="{{ asset('storage/' . $image->image_path) }}" alt="Dokumentasi" class="w-full h-96 object-cover">
+                                </div>
+                            @endforeach
+                        @else
+                            <!-- Placeholder images if the database is empty -->
+                            <div class="flex-shrink-0 w-full">
+                                <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 1" class="w-full h-96 object-cover">
+                            </div>
+                            <div class="flex-shrink-0 w-full">
+                                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 2" class="w-full h-96 object-cover">
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <button id="prev-slide" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-800 p-2 rounded-full shadow-md z-10">
