@@ -24,7 +24,7 @@ Route::get('/', function () {
     $documentationImages = DocumentationImage::all();
     $products = Product::all();
     return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products'));
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

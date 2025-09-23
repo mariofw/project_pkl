@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Edit Hero Image') }}
         </h2>
@@ -57,6 +58,7 @@
                         </div>
                     </div>
 
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
                     <script>
                         document.addEventListener('DOMContentLoaded', function () {
                             const imageUpload = document.getElementById('image-upload');
