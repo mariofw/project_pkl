@@ -23,15 +23,7 @@
                     <li class="mb-2">
                         <a href="{{ route('admin.abouts.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Tentang Kami, Visi dan Misi</a>
                     </li>
-                    <li class="mb-2">
-                        <a href="{{ route('admin.documentation-images.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Dokumentasi</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="{{ route('admin.products.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Produk</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="{{ route('admin.articles.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Artikel</a>
-                    </li>
+
                 </ul>
             </nav>
         </div>
@@ -75,6 +67,21 @@
 
                         if (newHTML) {
                             contentArea.innerHTML = newHTML;
+                            
+                            // Manually execute scripts from loaded content
+                            const scripts = content.querySelectorAll('script');
+                            scripts.forEach(script => {
+                                const code = script.innerHTML;
+                                if (code.includes('DOMContentLoaded')) {
+                                    try {
+                                        // The script is wrapped in DOMContentLoaded, so we extract the code and run it.
+                                        const funcBody = code.substring(code.indexOf('{') + 1, code.lastIndexOf('}'));
+                                        new Function(funcBody)();
+                                    } catch (e) {
+                                        console.error('Error executing script: ', e);
+                                    }
+                                }
+                            });
                         } else {
                             console.error('Could not find content to load in fetched HTML.');
                             contentArea.innerHTML = '<p>Could not load content. Please check console for details.</p>';

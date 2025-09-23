@@ -26,15 +26,26 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'order' => 'required|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cropped_image' => 'required',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        $path = $request->file('image')->store('service_images', 'public');
+        $imageData = $request->input('cropped_image');
+        list($type, $imageData) = explode(';', $imageData);
+        list(, $imageData)      = explode(',', $imageData);
+        $imageData = base64_decode($imageData);
+        $imageName = time().'.png';
+        $path = 'service_images/'.$imageName;
+
+        Storage::disk('public')->put($path, $imageData);
         $data['image_path'] = $path;
 
         Service::create($data);
+
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Service created successfully.', 'redirect_url' => route('admin.services.index')]);
+        }
 
         return redirect()->route('admin.services.index')->with('success', 'Service created successfully.');
     }
@@ -50,20 +61,32 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'order' => 'required|integer',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cropped_image' => 'sometimes|required',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        if ($request->hasFile('image')) {
+        if ($request->has('cropped_image') && $request->input('cropped_image')) {
             if ($service->image_path) {
                 Storage::disk('public')->delete($service->image_path);
             }
-            $path = $request->file('image')->store('service_images', 'public');
+            
+            $imageData = $request->input('cropped_image');
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData)      = explode(',', $imageData);
+            $imageData = base64_decode($imageData);
+            $imageName = time().'.png';
+            $path = 'service_images/'.$imageName;
+
+            Storage::disk('public')->put($path, $imageData);
             $data['image_path'] = $path;
         }
 
         $service->update($data);
+
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Service updated successfully.', 'redirect_url' => route('admin.services.index')]);
+        }
 
         return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
     }

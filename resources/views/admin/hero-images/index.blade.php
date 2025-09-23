@@ -40,10 +40,10 @@
                                             {{ __('Edit') }}
                                         </x-secondary-button>
                                     </a>
-                                    <form method="POST" action="{{ route('admin.hero-images.destroy', $image) }}" class="delete-form inline">
+                                    <form method="POST" action="{{ route('admin.hero-images.destroy', $image) }}" onsubmit="return confirm('Are you sure you want to delete this image?');">
                                         @csrf
                                         @method('DELETE')
-                                        <x-danger-button onclick="return confirm('Are you sure you want to delete this image?')">
+                                        <x-danger-button type="submit">
                                             {{ __('Delete') }}
                                         </x-danger-button>
                                     </form>
@@ -55,44 +55,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteForms = document.querySelectorAll('.delete-form');
-            deleteForms.forEach(form => {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    if (confirm('Are you sure you want to delete this image?')) {
-                        const url = this.getAttribute('action');
-                        const formData = new FormData(this);
-
-                        fetch(url, {
-                            method: 'POST', // Using POST to accommodate _method spoofing
-                            body: formData,
-                            headers: {
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                                'Accept': 'application/json'
-                            }
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                const slideFotoLink = window.parent.document.querySelector('a[href="{{ route('admin.hero-images.index') }}"]');
-                                if (slideFotoLink) {
-                                    slideFotoLink.click();
-                                }
-                            } else {
-                                alert(data.message || 'An error occurred.');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('An error occurred during deletion.');
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </x-app-layout>

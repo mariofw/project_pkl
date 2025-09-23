@@ -31,20 +31,29 @@ class HeroSectionImageController extends Controller
         }
 
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|string',
         ]);
 
         $heroSection = HeroSection::firstOrCreate([]);
 
-        $path = $request->file('image')->store('hero_images', 'public');
+        $imageData = $request->input('image');
+        @list($type, $imageData) = explode(';', $imageData);
+        @list(, $imageData)      = explode(',', $imageData);
 
-        HeroSectionImage::create([
-            'hero_section_id' => $heroSection->id,
-            'image_path' => $path,
-        ]);
+        if ($imageData) {
+            $imageData = base64_decode($imageData);
+            $imageName = 'hero_images/' . uniqid() . '.jpg';
+    
+            Storage::disk('public')->put($imageName, $imageData);
+    
+            HeroSectionImage::create([
+                'hero_section_id' => $heroSection->id,
+                'image_path' => $imageName,
+            ]);
+        }
 
         if ($request->wantsJson()) {
-            return response()->json(['success' => true, 'message' => 'Image uploaded successfully.']);
+            return response()->json(['success' => true, 'message' => 'Image uploaded successfully.', 'redirect_url' => route('admin.hero-images.index')]);
         }
 
         return redirect()->route('admin.hero-images.index')->with('success', 'Image uploaded successfully.');
@@ -58,19 +67,31 @@ class HeroSectionImageController extends Controller
     public function update(Request $request, HeroSectionImage $hero_image)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'sometimes|required|string',
         ]);
 
-        Storage::disk('public')->delete($hero_image->image_path);
+        if ($request->has('image') && $request->input('image')) {
+            // Delete old image
+            Storage::disk('public')->delete($hero_image->image_path);
 
-        $path = $request->file('image')->store('hero_images', 'public');
+            $imageData = $request->input('image');
+            @list($type, $imageData) = explode(';', $imageData);
+            @list(, $imageData)      = explode(',', $imageData);
 
-        $hero_image->update([
-            'image_path' => $path,
-        ]);
+            if ($imageData) {
+                $imageData = base64_decode($imageData);
+                $imageName = 'hero_images/' . uniqid() . '.jpg';
+        
+                Storage::disk('public')->put($imageName, $imageData);
+
+                $hero_image->update([
+                    'image_path' => $imageName,
+                ]);
+            }
+        }
 
         if ($request->wantsJson()) {
-            return response()->json(['success' => true, 'message' => 'Image updated successfully.']);
+            return response()->json(['success' => true, 'message' => 'Image updated successfully.', 'redirect_url' => route('admin.hero-images.index')]);
         }
 
         return redirect()->route('admin.hero-images.index')->with('success', 'Image updated successfully.');
