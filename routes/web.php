@@ -9,12 +9,14 @@ use App\Http\Controllers\Admin\HeroSectionImageController;
 use App\Http\Controllers\Admin\DocumentationImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\PartnershipController;
 use App\Models\About;
 use App\Models\DocumentationImage;
 use App\Models\HeroSection;
 use App\Models\HeroSectionImage;
 use App\Models\Service;
 use App\Models\Product;
+use App\Models\Partnership;
 
 Route::get('/', function () {
     $hero = HeroSection::first() ?? new HeroSection(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
@@ -23,7 +25,8 @@ Route::get('/', function () {
     $about = About::first();
     $documentationImages = DocumentationImage::all();
     $products = Product::all();
-    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products'));
+    $partnerships = Partnership::all();
+    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {
@@ -46,6 +49,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('documentation-images', DocumentationImageController::class)->except(['show']);
     Route::resource('products', ProductController::class)->except(['show']);
     Route::resource('articles', ArticleController::class)->except(['show']);
+    Route::resource('partnerships', PartnershipController::class)->except(['show']);
 });
 
 require __DIR__.'/auth.php';

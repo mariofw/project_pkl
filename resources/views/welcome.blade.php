@@ -61,6 +61,19 @@
     .responsive-text-3xl { font-size: clamp(1.5rem, 6vw, 2.5rem); }
     .responsive-text-4xl { font-size: clamp(1.8rem, 7vw, 3rem); }
     .responsive-text-5xl { font-size: clamp(2rem, 8vw, 3.5rem); }
+
+    #partners-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    #partners-container::-webkit-scrollbar-thumb {
+        background-color: #4a5568;
+        border-radius: 4px;
+    }
+
+    #partners-container::-webkit-scrollbar-track {
+        background-color: #2d3748;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -416,36 +429,20 @@
   <!-- Partners Section -->
   <section class="bg-green-700 text-green-100 py-6 sm:py-8">
     <div class="container-responsive">
-      <div class="grid grid-cols-3 sm:grid-cols-6 gap-4 sm:gap-6 items-center">
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 1</span>
+      <div class="text-center mb-8">
+        <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Our Partners</h2>
+        <p class="responsive-text-sm text-green-200">Kami Bekerja Sama dengan Mitra Terpercaya</p>
+      </div>
+      <div class="relative">
+        <div class="flex justify-center overflow-x-auto space-x-6 pb-4" id="partners-container">
+          @foreach ($partnerships as $partnership)
+          <div class="relative group w-32 h-32 bg-white rounded-lg p-3 flex items-center justify-center">
+              <img src="{{ asset('storage/' . $partnership->image_path) }}" alt="{{ $partnership->name }}" class="max-w-full max-h-full object-contain">
+              <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p class="text-white text-center font-semibold">{{ $partnership->name }}</p>
+              </div>
           </div>
-        </div>
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 2</span>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 3</span>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 4</span>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 5</span>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg p-2 sm:p-3">
-          <div class="w-16 h-8 sm:w-20 sm:h-10 bg-gray-200 rounded mx-auto flex items-center justify-center">
-            <span class="text-gray-500 responsive-text-xs">Partner 6</span>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -812,6 +809,40 @@
 
       startAutoPlay();
     }
+
+
+
+    // Partners Section Auto-Scroll
+    const partnersScroller = document.getElementById('partners-container');
+    if (partnersScroller) {
+      let scrollAmount = 0;
+      const scrollStep = 1;
+      const scrollDelay = 30; // ms
+      let scrollInterval;
+
+      function startScrolling() {
+        scrollInterval = setInterval(() => {
+          if (partnersScroller.scrollWidth > partnersScroller.clientWidth) {
+            partnersScroller.scrollLeft += scrollStep;
+            if (partnersScroller.scrollLeft >= partnersScroller.scrollWidth - partnersScroller.clientWidth) {
+              setTimeout(() => {
+                partnersScroller.scrollTo({ left: 0, behavior: 'smooth' });
+              }, 2000); // Pause at the end
+            }
+          }
+        }, scrollDelay);
+      }
+
+      function stopScrolling() {
+        clearInterval(scrollInterval);
+      }
+
+      partnersScroller.addEventListener('mouseenter', stopScrolling);
+      partnersScroller.addEventListener('mouseleave', startScrolling);
+
+      startScrolling();
+    }
+
   </script>
 </body>
 </html>
