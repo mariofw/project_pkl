@@ -503,30 +503,6 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="py-8 sm:py-12 lg:py-16">
-    <div class="container-responsive">
-      <div class="bg-green-700 text-green-100 rounded-lg overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 items-center">
-          <div class="col-span-2 p-6 sm:p-8 lg:p-12">
-            <h3 class="font-semibold responsive-text-lg sm:responsive-text-xl mb-4">
-              Kepuasan Anda adalah prioritas utama kami.
-            </h3>
-            <p class="responsive-text-xs sm:responsive-text-sm max-w-lg leading-relaxed mb-6">
-              Bergabunglah dengan ribuan keluarga yang telah merasakan manfaat hidroponik organik untuk kehidupan yang lebih sehat dan berkelanjutan.
-            </p>
-            <a class="inline-block bg-green-900 hover:bg-green-800 text-white responsive-text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="#">
-              Hubungi Kami
-            </a>
-          </div>
-          <div class="h-48 md:h-64 lg:h-full">
-            <img alt="Professional farmer" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Testimonial -->
   <section class="relative py-12 sm:py-16 lg:py-20 text-white overflow-hidden">
     <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
