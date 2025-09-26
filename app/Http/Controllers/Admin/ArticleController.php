@@ -26,6 +26,7 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link' => 'nullable|url',
         ]);
 
         $imageName = null;
@@ -38,6 +39,7 @@ class ArticleController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'image' => $imageName,
+            'link' => $request->link,
         ]);
 
         return redirect()->route('admin.articles.index')
@@ -55,6 +57,7 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link' => 'nullable|url',
         ]);
 
         $imageName = $article->image;
@@ -70,6 +73,7 @@ class ArticleController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'image' => $imageName,
+            'link' => $request->link,
         ]);
 
         return redirect()->route('admin.articles.index')

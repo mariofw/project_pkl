@@ -31,6 +31,12 @@
                     <li class="mb-2">
                         <a href="{{ route('profile.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Profile</a>
                     </li>
+                    <li class="mb-2">
+                        <a href="{{ route('admin.articles.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Artikel</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="{{ route('admin.partnerships.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Partnership</a>
+                    </li>
                 </ul>
             </nav>
         </div>

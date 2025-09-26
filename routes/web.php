@@ -17,6 +17,7 @@ use App\Models\HeroSectionImage;
 use App\Models\Service;
 use App\Models\Product;
 use App\Models\Partnership;
+use App\Models\Article;
 
 Route::get('/', function () {
     $hero = HeroSection::first() ?? new HeroSection(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
@@ -26,12 +27,17 @@ Route::get('/', function () {
     $documentationImages = DocumentationImage::all();
     $products = Product::all();
     $partnerships = Partnership::all();
-    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships'));
+    $articles = Article::latest()->get();
+    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/articles/{article}', function (App\Models\Article $article) {
+    return view('articles.show', compact('article'));
+})->name('articles.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

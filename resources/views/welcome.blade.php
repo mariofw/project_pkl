@@ -529,40 +529,23 @@
         <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Berita & Blog Terbaru Kami</h2>
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-        <div class="relative group rounded-lg overflow-hidden shadow-lg">
-            <img alt="Blog post 1" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <a href="#" class="w-full h-full">
-                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
-                        <h3 class="font-bold text-lg mb-2">Tips Memulai Hidroponik di Rumah untuk Pemula</h3>
-                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
-                    </div>
-                </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        @forelse ($articles as $article)
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="{{ $article->title }}" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="{{ $article->image ? asset('images/' . $article->image) : 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href="{{ $article->link ? $article->link : route('articles.show', $article) }}" class="w-full h-full" @if($article->link) target="_blank" @endif>
+                        <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
+                            <h3 class="font-bold text-lg mb-2">{{ $article->title }}</h3>
+                            <p class="text-sm mb-4">{{ Str::limit($article->content, 100) }}</p>
+                            <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="relative group rounded-lg overflow-hidden shadow-lg">
-            <img alt="Blog post 2" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <a href="#" class="w-full h-full">
-                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
-                        <h3 class="font-bold text-lg mb-2">Manfaat Pupuk Organik Cair untuk Tanaman Hidroponik</h3>
-                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="relative group rounded-lg overflow-hidden shadow-lg">
-            <img alt="Blog post 3" class="w-full h-64 object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"/>
-            <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <a href="#" class="w-full h-full">
-                    <div class="text-center text-white p-4 flex flex-col justify-center items-center h-full">
-                        <h3 class="font-bold text-lg mb-2">Sukses Berbisnis Sayuran Hidroponik di Era Digital</h3>
-                        <p class="text-green-300 text-sm font-semibold">Baca Selengkapnya</p>
-                    </div>
-                </a>
-            </div>
-        </div>
+        @empty
+            <p class="col-span-full text-center text-gray-500">No articles found.</p>
+        @endforelse
       </div>
     </div>
   </section>

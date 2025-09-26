@@ -33,6 +33,11 @@ class ArticleController extends Controller
         return redirect()->route('articles.index'); // Mengarahkan kembali ke daftar artikel
     }
 
+    public function show(Article $article)
+    {
+        return view('articles.show', compact('article'));
+    }
+
     // Menampilkan form untuk mengedit artikel
     public function edit(Article $article)
     {
