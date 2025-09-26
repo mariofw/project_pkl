@@ -585,6 +585,31 @@
     </div>
 </section>
 
+<!-- Green Economy Section -->
+<section class="py-8 sm:py-12 lg:py-16 bg-white text-gray-900">
+    <div class="container-responsive">
+        <div class="text-center mb-8 sm:mb-12">
+            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Green Economy</p>
+            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Ekonomi Hijau untuk Masa Depan</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-3 gap-4">
+                <img alt="PRODUK BERKELANJUTAN" class="rounded-lg shadow-lg" src="{{ asset('images/1. PRODUK BERKELANJUTAN.png') }}"/>
+                <img alt="PRODUK RAMAH LINGKUNGAN" class="rounded-lg shadow-lg" src="{{ asset('images/2. PRODUK RAMAH LINGKUNGAN.png') }}"/>
+                <img alt="Pemberdayaan Masyarakat" class="rounded-lg shadow-lg" src="{{ asset('images/3. Pemberdayaan Masyarakat.png') }}"/>
+                <img alt="Penghijauaan Kota" class="rounded-lg shadow-lg" src="{{ asset('images/4. Penghijauaan Kota.png') }}"/>
+                <img alt="Efiensi Energi" class="rounded-lg shadow-lg" src="{{ asset('images/5. Efiensi Energi.png') }}"/>
+                <img alt="inovasi berbasis limba" class="rounded-lg shadow-lg" src="{{ asset('images/6. inovasi berbasis limba.png') }}"/>
+            </div>
+            <div>
+                <h3 class="font-bold responsive-text-lg mb-2 text-green-800">Apa itu Green Economy?</h3>
+                <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">Ekonomi hijau adalah sebuah konsep ekonomi yang bertujuan untuk meningkatkan kesejahteraan manusia dan kesetaraan sosial, sambil secara signifikan mengurangi risiko lingkungan dan kelangkaan ekologis. Dalam praktiknya, ekonomi hijau berfokus pada investasi yang ramah lingkungan, menciptakan lapangan kerja hijau, dan mempromosikan pembangunan berkelanjutan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
   <!-- Testimonial -->
   <section class="relative py-12 sm:py-16 lg:py-20 text-white overflow-hidden">
     <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
