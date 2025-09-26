@@ -75,6 +75,19 @@
     #partners-container::-webkit-scrollbar-track {
         background-color: #2d3748;
     }
+
+    #services-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    #services-container::-webkit-scrollbar-thumb {
+        background-color: #a0aec0;
+        border-radius: 4px;
+    }
+
+    #services-container::-webkit-scrollbar-track {
+        background-color: #edf2f7;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -172,15 +185,15 @@
             <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
             <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+        <div class="flex justify-center overflow-x-auto space-x-6 pb-4" id="services-container">
             @foreach ($services as $service)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-64 flex-shrink-0">
                     <div class="h-48 overflow-hidden">
                         <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-6 text-center flex-grow flex flex-col">
-                        <h3 class="font-bold responsive-text-lg mb-2 text-gray-800">{{ $service->title }}</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed flex-grow">{{ $service->description }}</p>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-bold responsive-text-lg mb-2 text-gray-800 text-center">{{ $service->title }}</h3>
+                        <p class="responsive-text-xs text-gray-600 leading-relaxed flex-grow text-justify">{{ $service->description }}</p>
                     </div>
                 </div>
             @endforeach
