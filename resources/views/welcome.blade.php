@@ -12,47 +12,7 @@
     body {
       font-family: 'Inter', sans-serif;
     }
-    .flip-card {
-        background-color: transparent;
-        width: 160px;
-        height: 160px;
-        perspective: 1000px;
-    }
 
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-    }
-
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .flip-card-front {
-        background-color: transparent;
-        color: black;
-    }
-
-    .flip-card-back {
-        background-color: #2980b9;
-        color: white;
-        transform: rotateY(180deg);
-    }
 
     /* Custom responsive utilities */
     .container-responsive {
@@ -558,71 +518,66 @@
     </div>
   </section>
 
+
 <!-- SDG Points Section -->
-<section class="py-8 sm:py-12 lg:py-16">
+<section class="py-8 sm:py-12 lg:py-16 bg-green-700 text-green-100">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Poin-Poin SDGs</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Kontribusi Kami Terhadap SDGs</h2>
+            <p class="text-green-200 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Poin-Poin SDGs</p>
+            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl text-white">Kontribusi Kami Terhadap SDGs</h2>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin2sdg.gif') }}" alt="SDG Point 2" class="w-40 h-40 object-contain">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 2</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin3sdg.gif') }}" alt="SDG Point 3" class="w-40 h-40 object-contain">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 3</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 2" class="w-full h-full object-cover" src="{{ asset('images/poin2sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 2 – Zero Hunger (Tanpa Kelaparan)</h3>
+                        <p class="text-sm">Menghasilkan sayuran segar, sehat, dan bergizi melalui sistem hidroponik organik, sehingga meningkatkan ketahanan pangan di perkotaan.</p>
                     </div>
                 </div>
             </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin6sdg.gif') }}" alt="SDG Point 6" class="w-40 h-40 object-contain">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 6</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin11sdg.gif') }}" alt="SDG Point 11" class="w-40 h-40 object-contain">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 11</h3>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 3" class="w-full h-full object-cover" src="{{ asset('images/poin3sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 3 – Good Health and Well-being (Kehidupan Sehat & Sejahtera)</h3>
+                        <p class="text-sm">Produk bebas pestisida kimia berbahaya, menjaga kesehatan konsumen dan lingkungan</p>
                     </div>
                 </div>
             </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin12sdg.gif') }}" alt="SDG Point 12" class="w-40 h-40 object-contain">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 12</h3>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 6" class="w-full h-full object-cover" src="{{ asset('images/poin6sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 6 – Clean Water and Sanitation (Air Bersih & Sanitasi Layak)</h3>
+                        <p class="text-sm">Sistem hidroponik menghemat hingga 90% penggunaan air dibanding pertanian konvensional.</p>
                     </div>
                 </div>
             </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ asset('images/poin13sdg.gif') }}" alt="SDG Point 13" class="w-40 h-40 object-contain">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 11" class="w-full h-full object-cover" src="{{ asset('images/poin11sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 11 – Sustainable Cities and Communities (Kota & Permukiman Berkelanjutan)</h3>
+                        <p class="text-sm">Memanfaatkan lahan sempit di perkotaan menjadi area produktif dan hijau, serta mendorong terbentuknya komunitas pertanian modern.</p>
                     </div>
-                    <div class="flip-card-back">
-                        <h3 class="font-bold text-lg">SDGs 13</h3>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 12" class="w-full h-full object-cover" src="{{ asset('images/poin12sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 12 – Responsible Consumption and Production (Konsumsi & Produksi Berkelanjutan)</h3>
+                        <p class="text-sm">Potponik mendorong masyarakat untuk mengurangi limbah rumah tangga dengan memanfaatkannya sebagai media tanam, sehingga menciptakan pola konsumsi dan produksi yang lebih bertanggung jawab</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                <img alt="SDG Point 13" class="w-full h-full object-cover" src="{{ asset('images/poin13sdg.gif') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">SDG 13 – Climate Action (Penanganan Perubahan Iklim)</h3>
+                        <p class="text-sm">Mengurangi jejak karbon melalui pertanian lokal dan distribusi yang lebih singkat. Dengan memanfaatkan limbah rumah tangga serta mengurangi ketergantungan pada media tanam konvensional, sistem potponik turut menekan emisi dan memperluas praktik pertanian berkelanjutan di perkotaan.</p>
                     </div>
                 </div>
             </div>
