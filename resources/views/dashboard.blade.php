@@ -29,9 +29,6 @@
                         <a href="{{ route('admin.abouts.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Tentang Kami, Visi dan Misi</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{{ route('admin.partnerships.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Partners</a>
-                    </li>
-                    <li class="mb-2">
                         <a href="{{ route('profile.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Profile</a>
                     </li>
                 </ul>
