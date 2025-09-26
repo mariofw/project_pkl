@@ -156,7 +156,7 @@
                     })
                     .then(data => {
                         if (typeof data === 'object' && data !== null && data.redirect_url) {
-                             loadDynamicContent(data.redirect_url);
+                                loadDynamicContent(data.redirect_url);
                         }
                     })
                     .catch(error => {
