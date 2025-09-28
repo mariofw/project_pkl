@@ -97,19 +97,21 @@
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="container-responsive">
       <div class="flex justify-between items-center py-3 min-h-[60px]">
-        <div class="flex items-center space-x-2 flex-shrink-0">
-          <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.png') }}"/>
-          <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
-            HIDROGANIK ALFA
-          </span>
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2 flex-shrink-0">
+              <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.png') }}"/>
+              <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
+                HIDROGANIK ALFA
+              </span>
+            </div>
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-4 xl:space-x-8 responsive-text-sm font-semibold text-gray-700">
+              <li><a class="hover:text-green-700 transition-colors" href="/">Home</a></li>
+              @auth
+                <li><a class="hover:text-green-700 transition-colors" href="{{ url('/dashboard') }}">Dashboard</a></li>
+              @endauth
+            </ul>
         </div>
-        <!-- Desktop Menu -->
-        <ul class="hidden lg:flex space-x-4 xl:space-x-8 responsive-text-sm font-semibold text-gray-700">
-          <li><a class="hover:text-green-700 transition-colors" href="/">Home</a></li>
-          @auth
-            <li><a class="hover:text-green-700 transition-colors" href="{{ url('/dashboard') }}">Dashboard</a></li>
-          @endauth
-        </ul>
         
         <div class="flex items-center space-x-2">
         @guest
