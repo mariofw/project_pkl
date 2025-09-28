@@ -500,8 +500,8 @@
             <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl text-white">Kontribusi Kami Terhadap SDGs</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 2" class="w-full h-full object-cover" src="{{ asset('images/poin2sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 2" class="w-full object-cover aspect-square" src="{{ asset('images/poin2sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 2 – Zero Hunger (Tanpa Kelaparan)</h3>
@@ -509,8 +509,8 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 3" class="w-full h-full object-cover" src="{{ asset('images/poin3sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 3" class="w-full object-cover aspect-square" src="{{ asset('images/poin3sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 3 – Good Health and Well-being (Kehidupan Sehat & Sejahtera)</h3>
@@ -518,8 +518,8 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 6" class="w-full h-full object-cover" src="{{ asset('images/poin6sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 6" class="w-full object-cover aspect-square" src="{{ asset('images/poin6sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 6 – Clean Water and Sanitation (Air Bersih & Sanitasi Layak)</h3>
@@ -527,8 +527,8 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 11" class="w-full h-full object-cover" src="{{ asset('images/poin11sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 11" class="w-full object-cover aspect-square" src="{{ asset('images/poin11sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 11 – Sustainable Cities and Communities (Kota & Permukiman Berkelanjutan)</h3>
@@ -536,8 +536,8 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 12" class="w-full h-full object-cover" src="{{ asset('images/poin12sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 12" class="w-full object-cover aspect-square" src="{{ asset('images/poin12sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 12 – Responsible Consumption and Production (Konsumsi & Produksi Berkelanjutan)</h3>
@@ -545,8 +545,8 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="SDG Point 13" class="w-full h-full object-cover" src="{{ asset('images/poin13sdg.gif') }}"/>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="SDG Point 13" class="w-full object-cover aspect-square" src="{{ asset('images/poin13sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">SDG 13 – Climate Action (Penanganan Perubahan Iklim)</h3>
@@ -558,25 +558,66 @@
     </div>
 </section>
 
-<!-- Green Economy Section -->
 <section class="py-8 sm:py-12 lg:py-16 bg-white text-gray-900">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Green Economy</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Ekonomi Hijau untuk Masa Depan</h2>
+            <p class="text-gray-500 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Green Economy</p>
+            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl text-gray-900">Kontribusi Kami Terhadap Green Economy</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="grid grid-cols-3 gap-4">
-                <img alt="PRODUK BERKELANJUTAN" class="rounded-lg shadow-lg" src="{{ asset('images/1. PRODUK BERKELANJUTAN.png') }}"/>
-                <img alt="PRODUK RAMAH LINGKUNGAN" class="rounded-lg shadow-lg" src="{{ asset('images/2. PRODUK RAMAH LINGKUNGAN.png') }}"/>
-                <img alt="Pemberdayaan Masyarakat" class="rounded-lg shadow-lg" src="{{ asset('images/3. Pemberdayaan Masyarakat.png') }}"/>
-                <img alt="Penghijauaan Kota" class="rounded-lg shadow-lg" src="{{ asset('images/4. Penghijauaan Kota.png') }}"/>
-                <img alt="Efiensi Energi" class="rounded-lg shadow-lg" src="{{ asset('images/5. Efiensi Energi.png') }}"/>
-                <img alt="inovasi berbasis limba" class="rounded-lg shadow-lg" src="{{ asset('images/6. inovasi berbasis limba.png') }}"/>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="PRODUK BERKELANJUTAN" class="w-full object-cover aspect-square" src="{{ asset('images/1. PRODUK BERKELANJUTAN.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Produksi berkelanjutan</h3>
+                        <p class="text-sm">Menggunakan air dan nutrisi secara efisien.</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3 class="font-bold responsive-text-lg mb-2 text-green-800">Apa itu Green Economy?</h3>
-                <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">Ekonomi hijau adalah sebuah konsep ekonomi yang bertujuan untuk meningkatkan kesejahteraan manusia dan kesetaraan sosial, sambil secara signifikan mengurangi risiko lingkungan dan kelangkaan ekologis. Dalam praktiknya, ekonomi hijau berfokus pada investasi yang ramah lingkungan, menciptakan lapangan kerja hijau, dan mempromosikan pembangunan berkelanjutan.</p>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="PRODUK RAMAH LINGKUNGAN" class="w-full object-cover aspect-square" src="{{ asset('images/2. PRODUK RAMAH LINGKUNGAN.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Produk ramah lingkungan</h3>
+                        <p class="text-sm">Sayuran bebas pestisida kimia dan menggunakan pupuk organik cair (POC)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="Pemberdayaan Masyarakat" class="w-full object-cover aspect-square" src="{{ asset('images/3. Pemberdayaan Masyarakat.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Pemberdayaan masyarakat</h3>
+                        <p class="text-sm">Memberikan pelatihan dan membuka peluang usaha di bidang hidroponik organik</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="Penghijauaan Kota" class="w-full object-cover aspect-square" src="{{ asset('images/4. Penghijauaan Kota.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Penghijauan kota</h3>
+                        <p class="text-sm">Menciptakan ruang hijau produktif di wilayah perkotaan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="Efiensi Energi" class="w-full object-cover aspect-square" src="{{ asset('images/5. Efiensi Energi.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Efisiensi energi</h3>
+                        <p class="text-sm">Menggunakan pompa hemat listrik dan desain instalasi yang optimal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+                <img alt="inovasi berbasis limba" class="w-full object-cover aspect-square" src="{{ asset('images/6. inovasi berbasis limba.png') }}"/>
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <h3 class="font-bold text-lg mb-2">Inovasi berbasis limbah</h3>
+                        <p class="text-sm">Potponik memanfaatkan bahan limbah rumah tangga, mendukung prinsip ekonomi sirkular</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
