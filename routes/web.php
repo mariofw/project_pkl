@@ -47,11 +47,11 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/hero', [HeroSectionController::class, 'edit'])->name('hero.edit');
-    Route::post('/hero', [HeroSectionController::class, 'update'])->name('hero.update');
+    Route::patch('/hero', [HeroSectionController::class, 'update'])->name('hero.update');
     Route::resource('hero-images', HeroSectionImageController::class)->except(['show']);
     Route::resource('services', ServiceController::class)->except(['show']);
     Route::get('/abouts', [AboutController::class, 'edit'])->name('abouts.edit');
-    Route::post('/abouts', [AboutController::class, 'update'])->name('abouts.update');
+    Route::patch('/abouts', [AboutController::class, 'update'])->name('abouts.update');
     Route::resource('documentation-images', DocumentationImageController::class)->except(['show']);
     Route::resource('products', ProductController::class)->except(['show']);
     Route::resource('articles', ArticleController::class)->except(['show']);

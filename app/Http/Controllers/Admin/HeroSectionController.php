@@ -26,30 +26,20 @@ class HeroSectionController extends Controller
      */
     public function update(Request $request)
     {
-        $hero = HeroSection::first();
-
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'nullable|string',
+            'subtitle' => 'required|string|max:500',
             'button_text' => 'nullable|string|max:255',
             'button_link' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $data = $request->only('title', 'subtitle', 'button_text', 'button_link');
+        HeroSection::updateOrCreate(['id' => 1], $request->all());
 
-        if ($request->hasFile('image')) {
-            // Delete old image if it exists
-            if ($hero->image_path) {
-                Storage::disk('public')->delete($hero->image_path);
-            }
-            // Store new image
-            $path = $request->file('image')->store('hero_images', 'public');
-            $data['image_path'] = $path;
+        if ($request->expectsJson()) {
+            session()->flash('success', 'Hero section updated successfully.');
+            return response()->json(['redirect_url' => route('admin.hero.edit')]);
         }
 
-        $hero->update($data);
-
-        return redirect()->route('admin.hero.edit')->with('success', 'Hero Section updated successfully.');
+        return redirect()->route('admin.hero.edit')->with('success', 'Hero section updated successfully.');
     }
 }

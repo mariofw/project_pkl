@@ -33,31 +33,7 @@
                             <x-input-error :messages="$errors->get('subtitle')" class="mt-2" />
                         </div>
 
-                        <!-- Button Text -->
-                        <div class="mt-4">
-                            <x-input-label for="button_text" :value="__('Button Text')" />
-                            <x-text-input id="button_text" class="block mt-1 w-full" type="text" name="button_text" :value="old('button_text', $hero->button_text)" />
-                            <x-input-error :messages="$errors->get('button_text')" class="mt-2" />
-                        </div>
 
-                        <!-- Button Link -->
-                        <div class="mt-4">
-                            <x-input-label for="button_link" :value="__('Button Link')" />
-                            <x-text-input id="button_link" class="block mt-1 w-full" type="text" name="button_link" :value="old('button_link', $hero->button_link)" />
-                            <x-input-error :messages="$errors->get('button_link')" class="mt-2" />
-                        </div>
-
-                        <!-- Image -->
-                        <div class="mt-4">
-                            <x-input-label for="image" :value="__('Background Image')" />
-                            <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" />
-                            <x-input-error :messages="$errors->get('image')" class="mt-2" />
-                            @if ($hero->image_path)
-                                <div class="mt-2">
-                                    <img src="{{ asset('storage/' . $hero->image_path) }}" alt="Current Image" class="w-48 h-auto">
-                                </div>
-                            @endif
-                        </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <x-primary-button class="ml-4">

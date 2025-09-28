@@ -28,14 +28,15 @@
                     <li class="mb-2">
                         <a href="{{ route('admin.abouts.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Tentang Kami, Visi dan Misi</a>
                     </li>
-                    <li class="mb-2">
-                        <a href="{{ route('profile.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Profile</a>
-                    </li>
+                    
                     <li class="mb-2">
                         <a href="{{ route('admin.articles.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Artikel</a>
                     </li>
                     <li class="mb-2">
                         <a href="{{ route('admin.partnerships.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Partnership</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="{{ route('profile.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Profile</a>
                     </li>
                 </ul>
             </nav>
@@ -136,7 +137,7 @@
                     const method = (form.querySelector('input[name="_method"]')?.value || form.method).toUpperCase();
 
                     fetch(url, {
-                        method: method,
+                        method: method === 'GET' ? 'GET' : 'POST',
                         body: formData,
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -145,23 +146,52 @@
                         }
                     })
                     .then(response => {
+                        // Clear previous errors on new submission attempt
+                        form.querySelectorAll('.input-error-msg').forEach(el => el.remove());
+                        form.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
+
+                        if (response.status === 422) {
+                            response.json().then(data => {
+                                if (data.errors) {
+                                    Object.keys(data.errors).forEach(key => {
+                                        const field = form.querySelector(`[name="${key}"]`);
+                                        if (field) {
+                                            field.classList.add('border-red-500');
+                                            const errorElement = document.createElement('div');
+                                            errorElement.classList.add('input-error-msg', 'text-red-600', 'dark:text-red-400', 'text-sm', 'mt-1');
+                                            errorElement.textContent = data.errors[key][0];
+                                            field.parentNode.insertBefore(errorElement, field.nextSibling);
+                                        }
+                                    });
+                                }
+                            });
+                            return Promise.reject(null); // Stop promise chain for validation error
+                        }
+
                         if (response.redirected) {
                             loadDynamicContent(response.url);
-                            return;
+                            return Promise.reject(null); // Stop promise chain for redirect
                         }
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        
                         if (response.headers.get("Content-Type").includes("application/json")) {
                             return response.json();
                         }
                         return response.text();
                     })
                     .then(data => {
-                        if (typeof data === 'object' && data !== null && data.redirect_url) {
-                                loadDynamicContent(data.redirect_url);
+                        if (data && typeof data === 'object' && data.redirect_url) {
+                            loadDynamicContent(data.redirect_url);
                         }
                     })
                     .catch(error => {
-                        console.error('Error submitting form:', error);
-                        contentArea.innerHTML = '<p>Error submitting form. Please check console for details.</p>';
+                        if (error) { // Only log if there's an actual error object
+                            console.error('Error submitting form:', error);
+                            contentArea.innerHTML = '<p>Error submitting form. Please check console for details.</p>';
+                        }
                     });
                 }
             });

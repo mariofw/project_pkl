@@ -187,9 +187,9 @@
             <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
             <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        <div class="flex justify-center overflow-x-auto space-x-6 pb-4" id="services-container">
+        <div class="flex justify-center gap-6 overflow-x-auto pb-4" id="services-container">
             @foreach ($services as $service)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-64 flex-shrink-0">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-64">
                     <div class="h-48 overflow-hidden">
                         <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-full h-full object-cover">
                     </div>
@@ -299,34 +299,7 @@
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
         <div class="flex flex-col gap-8 lg:gap-12">
-            <!-- Image Carousel -->
-            <div class="relative w-full max-w-3xl mx-auto" id="documentation-carousel">
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <div class="flex transition-transform duration-500 ease-in-out" id="carousel-slides">
-                        @if($documentationImages->count() > 0)
-                            @foreach($documentationImages as $image)
-                                <div class="flex-shrink-0 w-full">
-                                    <img src="{{ asset('storage/' . $image->image_path) }}" alt="Dokumentasi" class="w-full h-96 object-cover">
-                                </div>
-                            @endforeach
-                        @else
-                            <!-- Placeholder images if the database is empty -->
-                            <div class="flex-shrink-0 w-full">
-                                <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 1" class="w-full h-96 object-cover">
-                            </div>
-                            <div class="flex-shrink-0 w-full">
-                                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 2" class="w-full h-96 object-cover">
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <button id="prev-slide" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-800 p-2 rounded-full shadow-md z-10">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="next-slide" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-gray-800 p-2 rounded-full shadow-md z-10">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+
 
             <!-- Text Content -->
             <div class="space-y-6 sm:space-y-8">
