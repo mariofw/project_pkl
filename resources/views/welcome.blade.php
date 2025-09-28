@@ -410,7 +410,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
         <div class="space-y-4 sm:space-y-6 text-center md:text-left">
           <h2 class="font-bold responsive-text-lg sm:responsive-text-xl leading-tight">
-            Professional, On time, Every time!
+            Akhmad Fujiyanto, S.Kom.
           </h2>
           <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
             Komitmen kami adalah memberikan layanan terbaik dengan ketepatan waktu dan hasil yang memuaskan.
@@ -421,7 +421,7 @@
         </div>
         
         <div class="flex justify-center">
-          <img alt="Happy customer with vegetables" class="rounded-lg shadow-lg w-full max-w-xs aspect-square object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+          <img alt="Happy customer with vegetables" class="rounded-lg shadow-lg w-full max-w-xs aspect-square object-cover" src="{{ asset('images/OmBoy.jpg') }}"/>
         </div>
         
         <div class="text-center">
