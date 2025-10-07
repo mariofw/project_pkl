@@ -14,5 +14,6 @@ class Article extends Model
         'content',
         'image',
         'link',
+        'type',
     ];
 }

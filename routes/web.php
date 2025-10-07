@@ -36,6 +36,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/articles/{article}', function (App\Models\Article $article) {
+    if ($article->type === 'activity') {
+        return view('articles.show_activity', compact('article'));
+    }
     return view('articles.show', compact('article'));
 })->name('articles.show');
 

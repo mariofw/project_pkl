@@ -1,5 +1,16 @@
 @csrf
 <div class="mb-4">
+    <label for="type" class="block text-gray-700 text-sm font-bold mb-2">Type</label>
+    <select name="type" id="type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        <option value="standard" @if(old('type', $article->type ?? 'standard') == 'standard') selected @endif>Standard</option>
+        <option value="activity" @if(old('type', $article->type ?? '') == 'activity') selected @endif>Activity</option>
+    </select>
+    @error('type')
+        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+    @enderror
+</div>
+
+<div class="mb-4">
     <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
     <input type="text" name="title" id="title" value="{{ old('title', $article->title ?? '') }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
     @error('title')
@@ -28,7 +39,7 @@
     @enderror
 </div>
 
-<div class="mb-4">
+<div class="mb-4" id="link-field">
     <label for="link" class="block text-gray-700 text-sm font-bold mb-2">Link</label>
     <input type="text" name="link" id="link" value="{{ old('link', $article->link ?? '') }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     @error('link')
@@ -52,3 +63,22 @@
         </a>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const typeElement = document.getElementById('type');
+        const linkField = document.getElementById('link-field');
+
+        function toggleLinkField() {
+            if (typeElement.value === 'activity') {
+                linkField.style.display = 'none';
+            } else {
+                linkField.style.display = 'block';
+            }
+        }
+
+        toggleLinkField();
+
+        typeElement.addEventListener('change', toggleLinkField);
+    });
+</script>
