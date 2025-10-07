@@ -17,7 +17,7 @@
     /* Custom responsive utilities */
     .container-responsive {
       width: 100%;
-      max-width: 1200px;
+      /* max-width: 1200px; */
       margin: 0 auto;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -54,16 +54,6 @@
       max-width: 100%;
       height: auto;
     }
-    /* Better text scaling */
-    .responsive-text-xs { font-size: clamp(0.7rem, 2vw, 0.875rem); }
-    .responsive-text-sm { font-size: clamp(0.8rem, 2.5vw, 1rem); }
-    .responsive-text-base { font-size: clamp(0.9rem, 3vw, 1.125rem); }
-    .responsive-text-lg { font-size: clamp(1rem, 3.5vw, 1.25rem); }
-    .responsive-text-xl { font-size: clamp(1.1rem, 4vw, 1.5rem); }
-    .responsive-text-2xl { font-size: clamp(1.3rem, 5vw, 2rem); }
-    .responsive-text-3xl { font-size: clamp(1.5rem, 6vw, 2.5rem); }
-    .responsive-text-4xl { font-size: clamp(1.8rem, 7vw, 3rem); }
-    .responsive-text-5xl { font-size: clamp(2rem, 8vw, 3.5rem); }
 
     #partners-container::-webkit-scrollbar {
         height: 8px;
@@ -100,12 +90,12 @@
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-2 flex-shrink-0">
               <img alt="Team photo" class="h-10 w-auto" src="{{ asset('images/Logo_HA.png') }}"/>
-              <span class="font-bold responsive-text-sm sm:responsive-text-lg text-green-900 whitespace-nowrap">
+              <span class="font-bold text-sm sm:text-lg text-green-900 whitespace-nowrap">
                 HIDROGANIK ALFA
               </span>
             </div>
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex space-x-4 xl:space-x-8 responsive-text-sm font-semibold text-gray-700">
+            <ul class="hidden lg:flex space-x-4 xl:space-x-8 text-sm font-semibold text-gray-700">
               <li><a class="hover:text-green-700 transition-colors" href="/">Home</a></li>
               @auth
                 <li><a class="hover:text-green-700 transition-colors" href="{{ url('/dashboard') }}">Dashboard</a></li>
@@ -115,19 +105,19 @@
         
         <div class="flex items-center space-x-2">
         @guest
-          <a class="hidden sm:inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-3 sm:px-4 py-2 rounded transition-colors" href="{{ route('login') }}">
+          <a class="hidden sm:inline-block bg-green-700 hover:bg-green-800 text-white text-xs font-semibold px-3 sm:px-4 py-2 rounded transition-colors" href="{{ route('login') }}">
             Login
           </a>
         @endguest
           <button aria-label="Toggle menu" class="lg:hidden text-green-900 focus:outline-none p-2" id="mobile-menu-button">
-            <i class="fas fa-bars responsive-text-lg"></i>
+            <i class="fas fa-bars text-lg"></i>
           </button>
         </div>
       </div>
       
       <!-- Mobile menu -->
       <div class="mobile-menu-transition lg:hidden bg-white border-t border-gray-200" id="mobile-menu">
-        <ul class="flex flex-col space-y-3 px-4 py-4 text-gray-700 font-semibold responsive-text-sm">
+        <ul class="flex flex-col space-y-3 px-4 py-4 text-gray-700 font-semibold text-sm">
           <li><a class="block hover:text-green-700 py-1" href="/">Home</a></li>
           @auth
             <li><a class="block hover:text-green-700 py-1" href="{{ url('/dashboard') }}">Dashboard</a></li>
@@ -162,18 +152,18 @@
     <div class="absolute inset-0 flex items-center">  
       <div class="container-responsive">
         <div class="max-w-xl text-white">
-          <div class="flex items-center space-x-2 responsive-text-xs sm:responsive-text-sm font-semibold text-green-300 mb-2 sm:mb-4">
+          <div class="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-green-300 mb-2 sm:mb-4">
             <i class="fas fa-seedling"></i>
             <span>HIDROGRANIK ALFA</span>
           </div>
-          <h1 class="responsive-text-2xl sm:responsive-text-3xl md:responsive-text-4xl lg:responsive-text-5xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6">
             {!! nl2br(e($hero->title)) !!}
           </h1>
-          <p class="responsive-text-xs sm:responsive-text-sm max-w-lg mb-4 sm:mb-6 leading-relaxed">
+          <p class="text-xs sm:text-sm max-w-lg mb-4 sm:mb-6 leading-relaxed">
             {{ $hero->subtitle }}
           </p>
           @if($hero->button_text && $hero->button_link)
-            <a class="inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="{{ $hero->button_link }}">
+            <a class="inline-block bg-green-700 hover:bg-green-800 text-white text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="{{ $hero->button_link }}">
               {{ $hero->button_text }}
             </a>
           @endif
@@ -186,18 +176,18 @@
 <section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Solusi Pertanian Modern</h2>
+            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
+            <h2 class="font-bold text-xl sm:text-2xl">Solusi Pertanian Modern</h2>
         </div>
-        <div class="flex justify-center gap-6 overflow-x-auto pb-4" id="services-container">
+        <div class="flex justify-start sm:justify-center gap-4 sm:gap-6 overflow-x-auto pb-4" id="services-container">
             @foreach ($services as $service)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-64">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-56 sm:w-64 flex-shrink-0">
                     <div class="h-48 overflow-hidden">
                         <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->title }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="font-bold responsive-text-lg mb-2 text-gray-800 text-center">{{ $service->title }}</h3>
-                        <p class="responsive-text-xs text-gray-600 leading-relaxed flex-grow text-justify">{{ $service->description }}</p>
+                        <h3 class="font-bold text-lg mb-2 text-gray-800 text-center">{{ $service->title }}</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed flex-grow text-justify">{{ $service->description }}</p>
                     </div>
                 </div>
             @endforeach
@@ -217,22 +207,22 @@
             </div>
             <div class="space-y-4 sm:space-y-6">
                 <div>
-                    <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider">TENTANG KAMI</p>
-                    <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight">
+                    <p class="text-green-700 font-semibold text-xs uppercase tracking-wider">TENTANG KAMI</p>
+                    <h2 class="text-xl sm:text-2xl font-bold leading-tight">
                         Hidroponik Organik Untuk Masa Depan Sehat
                     </h2>
-                    <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {{ $about->tentang_kami }}
                     </p>
                 </div>
                 <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     <div>
-                        <h3 class="font-bold responsive-text-lg mb-2 text-green-800">VISI</h3>
-                        <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">{{ $about->visi }}</p>
+                        <h3 class="font-bold text-lg mb-2 text-green-800">VISI</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">{{ $about->visi }}</p>
                     </div>
                     <div>
-                        <h3 class="font-bold responsive-text-lg mb-2 text-green-800">MISI</h3>
-                        <ul class="list-disc list-inside text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed space-y-1">
+                        <h3 class="font-bold text-lg mb-2 text-green-800">MISI</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-xs sm:text-sm leading-relaxed space-y-1">
                             @foreach (explode('\n', $about->misi) as $misi_item)
                                 <li>{{ $misi_item }}</li>
                             @endforeach
@@ -249,10 +239,10 @@
   <section class="bg-green-700 text-green-100 py-6 sm:py-8">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-200 font-semibold responsive-text-xs uppercase tracking-wider mb-2">What We Offer</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl mb-4">Let your home have a breath of fresh air.</h2>
+            <p class="text-green-200 font-semibold text-xs uppercase tracking-wider mb-2">What We Offer</p>
+            <h2 class="font-bold text-xl sm:text-2xl mb-4">Let your home have a breath of fresh air.</h2>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             <!-- Item 1: Perawatan Kebun -->
             <div class="relative group rounded-lg overflow-hidden shadow-lg">
                 <img alt="Perawatan Kebun" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
@@ -306,13 +296,13 @@
             <!-- Text Content -->
             <div class="space-y-6 sm:space-y-8">
                 <div>
-                    <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Why Choose Us</p>
-                    <h2 class="responsive-text-xl sm:responsive-text-2xl font-bold leading-tight mb-4">
+                    <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Why Choose Us</p>
+                    <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-4">
                         Kami berkomitmen untuk memberikan yang terbaik dalam setiap layanan yang kami berikan dengan pendekatan yang personal dan profesional.
                     </h2>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
                     <!-- Item 1: Berpengalaman -->
                     <div class="relative group rounded-lg overflow-hidden shadow-lg">
                         <img alt="Berpengalaman" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
@@ -384,13 +374,13 @@
     <div class="container-responsive">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
         <div class="space-y-4 sm:space-y-6 text-center md:text-left">
-          <h2 class="font-bold responsive-text-lg sm:responsive-text-xl leading-tight">
+          <h2 class="font-bold text-lg sm:text-xl leading-tight">
             Akhmad Fujiyanto, S.Kom.
           </h2>
-          <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm leading-relaxed">
+          <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
             Komitmen kami adalah memberikan layanan terbaik dengan ketepatan waktu dan hasil yang memuaskan.
           </p>
-          <a class="inline-block bg-green-700 hover:bg-green-800 text-white responsive-text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="#">
+          <a class="inline-block bg-green-700 hover:bg-green-800 text-white text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="#">
             Hubungi Kami
           </a>
         </div>
@@ -401,8 +391,8 @@
         
         <div class="text-center">
           <div class="space-y-2 mb-4">
-            <p class="text-green-700 font-bold responsive-text-2xl sm:responsive-text-3xl">5+</p>
-            <p class="font-semibold text-green-700 responsive-text-sm">Tahun Pengalaman</p>
+            <p class="text-green-700 font-bold text-2xl sm:text-3xl">5+</p>
+            <p class="font-semibold text-green-700 text-sm">Tahun Pengalaman</p>
           </div>
           <div class="flex justify-center space-x-1 text-green-700 text-sm sm:text-base mb-3">
             <i class="fas fa-star"></i>
@@ -411,7 +401,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
           </div>
-          <p class="text-gray-600 responsive-text-xs max-w-xs mx-auto leading-relaxed">
+          <p class="text-gray-600 text-xs max-w-xs mx-auto leading-relaxed">
             Ribuan pelanggan puas dengan layanan dan produk berkualitas kami.
           </p>
         </div>
@@ -423,8 +413,8 @@
   <section class="bg-green-700 text-green-100 py-6 sm:py-8">
     <div class="container-responsive">
       <div class="text-center mb-8">
-        <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Our Partners</h2>
-        <p class="responsive-text-sm text-green-200">Kami Bekerja Sama dengan Mitra Terpercaya</p>
+        <h2 class="font-bold text-xl sm:text-2xl">Our Partners</h2>
+        <p class="text-sm text-green-200">Kami Bekerja Sama dengan Mitra Terpercaya</p>
       </div>
       <div class="relative">
         <div class="flex justify-center overflow-x-auto space-x-6 pb-4" id="partners-container">
@@ -445,9 +435,9 @@
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
       <div class="text-center mb-8 sm:mb-12">
-        <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Our Project</p>
-        <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl mb-4">Come home to paradise.</h2>
-        <p class="text-gray-600 responsive-text-xs sm:responsive-text-sm max-w-2xl mx-auto leading-relaxed">
+        <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Our Project</p>
+        <h2 class="font-bold text-xl sm:text-2xl mb-4">Come home to paradise.</h2>
+        <p class="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
           Lihat berbagai proyek hidroponik yang telah kami kerjakan untuk berbagai klien dari rumah tangga hingga komersial.
         </p>
       </div>
@@ -498,8 +488,8 @@
 <section class="py-8 sm:py-12 lg:py-16 bg-green-700 text-green-100">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-200 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Poin-Poin SDGs</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl text-white">Kontribusi Kami Terhadap SDGs</h2>
+            <p class="text-green-200 font-semibold text-xs uppercase tracking-wider mb-2">Poin-Poin SDGs</p>
+            <h2 class="font-bold text-xl sm:text-2xl text-white">Kontribusi Kami Terhadap SDGs</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
@@ -563,8 +553,8 @@
 <section class="py-8 sm:py-12 lg:py-16 bg-white text-gray-900">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-gray-500 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Green Economy</p>
-            <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl text-gray-900">Kontribusi Kami Terhadap Green Economy</h2>
+            <p class="text-gray-500 font-semibold text-xs uppercase tracking-wider mb-2">Green Economy</p>
+            <h2 class="font-bold text-xl sm:text-2xl text-gray-900">Kontribusi Kami Terhadap Green Economy</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
@@ -633,14 +623,14 @@
     
     <div class="relative z-20 container-responsive text-center">
       <div class="max-w-4xl mx-auto">
-        <p class="responsive-text-sm sm:responsive-text-base italic mb-6 sm:mb-8 leading-relaxed">
+        <p class="text-sm sm:text-base italic mb-6 sm:mb-8 leading-relaxed">
           "Sejak mengikuti pelatihan di Hidroganik Alfa, keluarga kami bisa menikmati sayuran segar setiap hari dari kebun hidroponik sendiri. Tim mereka sangat profesional dan sabar dalam memberikan panduan. Hasilnya melebihi ekspektasi kami!"
         </p>
         <div class="flex flex-col items-center space-y-3 sm:space-y-4">
           <img alt="Customer testimonial" class="rounded-full border-4 border-green-400 w-16 h-16 sm:w-20 sm:h-20 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"/>
           <div>
-            <p class="font-semibold text-green-300 responsive-text-sm sm:responsive-text-base">Ibu Sari Indrawati</p>
-            <p class="text-green-300 responsive-text-xs uppercase tracking-widest">Peserta Pelatihan</p>
+            <p class="font-semibold text-green-300 text-sm sm:text-base">Ibu Sari Indrawati</p>
+            <p class="text-green-300 text-xs uppercase tracking-widest">Peserta Pelatihan</p>
           </div>
         </div>
       </div>
@@ -651,8 +641,8 @@
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
       <div class="text-center mb-8 sm:mb-12">
-        <p class="text-green-700 font-semibold responsive-text-xs uppercase tracking-wider mb-2">Our Blog</p>
-        <h2 class="font-bold responsive-text-xl sm:responsive-text-2xl">Berita & Blog Terbaru Kami</h2>
+        <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Our Blog</p>
+        <h2 class="font-bold text-xl sm:text-2xl">Berita & Blog Terbaru Kami</h2>
       </div>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -683,30 +673,30 @@
         <div class="sm:col-span-2 lg:col-span-1">
           <div class="flex items-center space-x-2 mb-4">
             <img alt="Team photo" class="h-10 w-auto bg-white rounded-full p-1" src="{{ asset('images/Logo_HA.png') }}"/>
-            <span class="font-bold responsive-text-lg">HIDROGANIK ALFA</span>
+            <span class="font-bold text-lg">HIDROGANIK ALFA</span>
           </div>
-          <p class="responsive-text-xs max-w-xs mb-4 leading-relaxed">
+          <p class="text-xs max-w-xs mb-4 leading-relaxed">
             Pionir hidroponik organik Indonesia yang berkomitmen untuk menciptakan masa depan pertanian yang sehat dan berkelanjutan.
           </p>
           <div class="flex space-x-4 text-green-300">
-            <a aria-label="Facebook" class="hover:text-green-100 transition-colors responsive-text-lg" href="#">
+            <a aria-label="Facebook" class="hover:text-green-100 transition-colors text-lg" href="#">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a aria-label="Instagram" class="hover:text-green-100 transition-colors responsive-text-lg" href="#">
+            <a aria-label="Instagram" class="hover:text-green-100 transition-colors text-lg" href="#">
               <i class="fab fa-instagram"></i>
             </a>
-            <a aria-label="YouTube" class="hover:text-green-100 transition-colors responsive-text-lg" href="#">
+            <a aria-label="YouTube" class="hover:text-green-100 transition-colors text-lg" href="#">
               <i class="fab fa-youtube"></i>
             </a>
-            <a aria-label="WhatsApp" class="hover:text-green-100 transition-colors responsive-text-lg" href="#">
+            <a aria-label="WhatsApp" class="hover:text-green-100 transition-colors text-lg" href="#">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
         
         <div>
-          <h4 class="font-semibold responsive-text-sm mb-4">Halaman</h4>
-          <ul class="responsive-text-xs space-y-2">
+          <h4 class="font-semibold text-sm mb-4">Halaman</h4>
+          <ul class="text-xs space-y-2">
             <li><a class="hover:underline transition-colors" href="#">Beranda</a></li>
             <li><a class="hover:underline transition-colors" href="#">Tentang Kami</a></li>
             <li><a class="hover:underline transition-colors" href="#">Layanan</a></li>
@@ -716,8 +706,8 @@
         </div>
         
         <div>
-          <h4 class="font-semibold responsive-text-sm mb-4">Layanan</h4>
-          <ul class="responsive-text-xs space-y-2">
+          <h4 class="font-semibold text-sm mb-4">Layanan</h4>
+          <ul class="text-xs space-y-2">
             <li><a class="hover:underline transition-colors" href="#">Pelatihan Hidroponik</a></li>
             <li><a class="hover:underline transition-colors" href="#">Konsultasi</a></li>
             <li><a class="hover:underline transition-colors" href="#">Instalasi</a></li>
@@ -727,8 +717,8 @@
         </div>
         
         <div>
-          <h4 class="font-semibold responsive-text-sm mb-4">Kontak</h4>
-          <ul class="responsive-text-xs space-y-2">
+          <h4 class="font-semibold text-sm mb-4">Kontak</h4>
+          <ul class="text-xs space-y-2">
             <li class="flex items-start space-x-2">
               <i class="fas fa-map-marker-alt text-green-300 mt-1 flex-shrink-0"></i>
               <a href="#" target="_blank" class="hover:underline">JL. Pekapuran Raya Komplek Yatera Gg. Bambu Indah, Kota Banjarmasin</a>
@@ -755,7 +745,7 @@
       
       <div class="border-t border-green-600 pt-6">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-          <p class="responsive-text-xs text-green-200 text-center sm:text-left">
+          <p class="text-xs text-green-200 text-center sm:text-left">
             Copyright 2024 © Hidroganik Alfa. All Rights Reserved
           </p>
         </div>

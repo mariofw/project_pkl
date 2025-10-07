@@ -1,14 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('Admin Dashboard') }}
-            </h2>
-            <a href="{{ route('welcome') }}" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-                Home
-            </a>
-        </div>
-    </x-slot>
+
 
     <div class="flex h-screen">
         <!-- Sidebar -->
@@ -68,19 +59,18 @@
                     .then(html => {
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, 'text/html');
-                        const headerContent = doc.querySelector('header .max-w-7xl');
-                        const content = doc.querySelector('.py-12') || doc.querySelector('main');
                         
-                        let newHTML = '';
-                        if (headerContent) {
-                            newHTML += headerContent.outerHTML;
-                        }
-                        if (content) {
-                            newHTML += content.outerHTML;
+                        // Update header
+                        const newHeaderContent = doc.querySelector('#page-header-content');
+                        const pageHeaderContent = document.getElementById('page-header-content');
+                        if (pageHeaderContent && newHeaderContent) {
+                            pageHeaderContent.innerHTML = newHeaderContent.innerHTML;
                         }
 
-                        if (newHTML) {
-                            contentArea.innerHTML = newHTML;
+                        // Update content
+                        const content = doc.querySelector('.py-12') || doc.querySelector('main');
+                        if (content) {
+                            contentArea.innerHTML = content.innerHTML;
                             
                             // Manually execute scripts from loaded content
                             const scripts = content.querySelectorAll('script');
