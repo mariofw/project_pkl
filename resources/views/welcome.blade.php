@@ -84,7 +84,7 @@
 </head>
 <body class="bg-white text-gray-900">
   <!-- Navbar -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="bg-white shadow-sm sticky top-0 z-50" style="border-bottom: 2px solid green;">
     <div class="container-responsive">
       <div class="flex justify-between items-center py-3 min-h-[60px]">
         <div class="flex items-center space-x-4">
@@ -380,7 +380,7 @@
           <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
             Komitmen kami adalah memberikan layanan terbaik dengan ketepatan waktu dan hasil yang memuaskan.
           </p>
-          <a class="inline-block bg-green-700 hover:bg-green-800 text-white text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="#">
+          <a class="inline-block bg-green-700 hover:bg-green-800 text-white text-xs font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded transition-colors" href="https://wa.me/6282250098693">
             Hubungi Kami
           </a>
         </div>
