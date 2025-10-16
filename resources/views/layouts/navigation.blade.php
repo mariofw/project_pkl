@@ -5,12 +5,12 @@
             <div class="flex items-center">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('welcome') }}">
                         <img src="{{ asset('images/Logo_HA.png') }}" alt="Logo" class="block h-9 w-auto" />
                     </a>
                 </div>
                 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight ml-4">
-                    {{ __('Admin Dashboard') }}
+                    <a href="{{ route('welcome') }}">{{ __('Admin Dashboard') }}</a>
                 </h2>
             </div>
 

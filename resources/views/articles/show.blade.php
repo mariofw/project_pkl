@@ -56,13 +56,19 @@
     <div class="container-responsive max-w-4xl mx-auto px-4">
         <div class="prose lg:prose-xl max-w-full">
             <h1>{{ $article->title }}</h1>
-            
-            @if($article->image)
-                <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full rounded-lg shadow-lg mb-8">
-            @endif
 
-            <div class="text-gray-700 text-base leading-relaxed">
-                {!! nl2br(e($article->content)) !!}
+            <div class="flex flex-col md:flex-row md:space-x-8">
+                @if($article->image)
+                    <div class="md:w-1/2">
+                        <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full rounded-lg shadow-lg mb-4 md:mb-0">
+                    </div>
+                @endif
+
+                <div class="md:w-1/2">
+                    <div class="text-gray-700 text-base leading-relaxed">
+                        {!! nl2br(e($article->content)) !!}
+                    </div>
+                </div>
             </div>
 
             <div class="mt-12 border-t pt-6">
