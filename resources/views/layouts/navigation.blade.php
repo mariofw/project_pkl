@@ -70,9 +70,15 @@
             <x-responsive-nav-link :href="url('/')" :active="request()->is('/')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+                <x-nav-link :href="route('admin.services.index')" :active="request()->routeIs('admin.services.index')">
+                    {{ __('What We Offer') }}
+                </x-nav-link>
+                <x-nav-link :href="route('admin.sections.edit', ['section' => $whatWeOfferSection])" :active="request()->routeIs('admin.sections.edit')">
+                    {{ __('Edit What We Offer Title') }}
+                </x-nav-link>
+                <x-nav-link :href="route('admin.abouts.edit')" :active="request()->routeIs('admin.abouts.edit')">
+                    {{ __('About Us') }}
+                </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

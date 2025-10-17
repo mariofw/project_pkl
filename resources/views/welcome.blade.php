@@ -235,12 +235,12 @@
     </div>
   </section>
 
-  <!-- What We Offer -->
-  <section class="bg-green-700 text-green-100 py-6 sm:py-8">
+  <!-- Services Summary -->
+<section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-200 font-semibold text-xs uppercase tracking-wider mb-2">What We Offer</p>
-            <h2 class="font-bold text-xl sm:text-2xl mb-4">Let your home have a breath of fresh air.</h2>
+            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">{{ $whatWeOfferSection->title }}</p>
+            <h2 class="font-bold text-xl sm:text-2xl">{{ $whatWeOfferSection->subtitle }}</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             <!-- Item 1: Perawatan Kebun -->
