@@ -30,7 +30,7 @@ Route::get('/', function () {
     $products = Product::all();
     $partnerships = Partnership::all();
     $articles = Article::latest()->get();
-    $whatWeOfferSection = Section::where('name', 'what_we_offer')->first();
+    $whatWeOfferSection = Section::where('name', 'what_we_offer')->first() ?? new Section(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
     return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'whatWeOfferSection'));
 })->name('welcome');
 

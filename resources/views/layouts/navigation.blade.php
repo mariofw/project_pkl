@@ -1,4 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 sticky top-0 z-50" style="border-bottom: 2px solid green;">
+    @php
+        $whatWeOfferSection = \App\Models\Section::where('name', 'what_we_offer')->first();
+    @endphp
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -73,9 +76,11 @@
                 <x-nav-link :href="route('admin.services.index')" :active="request()->routeIs('admin.services.index')">
                     {{ __('What We Offer') }}
                 </x-nav-link>
-                <x-nav-link :href="route('admin.sections.edit', ['section' => $whatWeOfferSection])" :active="request()->routeIs('admin.sections.edit')">
-                    {{ __('Edit What We Offer Title') }}
-                </x-nav-link>
+                @if($whatWeOfferSection)
+                    <x-nav-link :href="route('admin.sections.edit', ['section' => $whatWeOfferSection])" :active="request()->routeIs('admin.sections.edit')">
+                        {{ __('Edit What We Offer Title') }}
+                    </x-nav-link>
+                @endif
                 <x-nav-link :href="route('admin.abouts.edit')" :active="request()->routeIs('admin.abouts.edit')">
                     {{ __('About Us') }}
                 </x-nav-link>
