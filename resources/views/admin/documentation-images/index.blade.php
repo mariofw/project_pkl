@@ -17,7 +17,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         @foreach ($images as $image)
                             <div class="relative">
-                                <img src="{{ asset('storage/' . $image->image_path) }}" alt="Documentation Image" class="w-full h-48 object-cover rounded-lg">
+                                <img src="{{ asset('storage/' . $image->image_path) }}" alt="Documentation Image" class="w-full h-auto object-cover rounded-lg">
                                 <form action="{{ route('admin.documentation-images.destroy', $image->id) }}" method="POST" class="absolute top-2 right-2">
                                     @csrf
                                     @method('DELETE')

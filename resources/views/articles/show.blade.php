@@ -60,7 +60,7 @@
             <div class="flex flex-col md:flex-row md:space-x-8">
                 @if($article->image)
                     <div class="md:w-1/2">
-                        <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full rounded-lg shadow-lg mb-4 md:mb-0">
+                        <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-auto rounded-lg shadow-lg mb-4 md:mb-0">
                     </div>
                 @endif
 

@@ -245,7 +245,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             <!-- Item 1: Perawatan Kebun -->
             <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Perawatan Kebun" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <img alt="Perawatan Kebun" class="w-4/5 mx-auto aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">Perawatan Kebun</h3>
@@ -255,7 +255,7 @@
             </div>
             <!-- Item 2: Sistem Irigasi -->
             <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Sistem Irigasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <img alt="Sistem Irigasi" class="w-4/5 mx-auto aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">Sistem Irigasi</h3>
@@ -265,7 +265,7 @@
             </div>
             <!-- Item 3: Maintenance -->
             <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Maintenance" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542928658-22251e20ac66?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <img alt="Maintenance" class="w-4/5 mx-auto aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542928658-22251e20ac66?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">Maintenance</h3>
@@ -275,7 +275,7 @@
             </div>
             <!-- Item 4: Optimasi Hasil -->
             <div class="relative group rounded-lg overflow-hidden shadow-lg">
-                <img alt="Optimasi Hasil" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                <img alt="Optimasi Hasil" class="w-4/5 mx-auto aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
                         <h3 class="font-bold text-lg mb-2">Optimasi Hasil</h3>
@@ -492,7 +492,7 @@
             <h2 class="font-bold text-xl sm:text-2xl text-white">Kontribusi Kami Terhadap SDGs</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 2" class="w-full object-cover aspect-square" src="{{ asset('images/poin2sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -501,7 +501,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 3" class="w-full object-cover aspect-square" src="{{ asset('images/poin3sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -510,7 +510,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 6" class="w-full object-cover aspect-square" src="{{ asset('images/poin6sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -519,7 +519,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 11" class="w-full object-cover aspect-square" src="{{ asset('images/poin11sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -528,7 +528,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 12" class="w-full object-cover aspect-square" src="{{ asset('images/poin12sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -537,7 +537,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="SDG Point 13" class="w-full object-cover aspect-square" src="{{ asset('images/poin13sdg.gif') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -557,7 +557,7 @@
             <h2 class="font-bold text-xl sm:text-2xl text-gray-900">Kontribusi Kami Terhadap Green Economy</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="PRODUK BERKELANJUTAN" class="w-full object-cover aspect-square" src="{{ asset('images/1. PRODUK BERKELANJUTAN.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -566,7 +566,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="PRODUK RAMAH LINGKUNGAN" class="w-full object-cover aspect-square" src="{{ asset('images/2. PRODUK RAMAH LINGKUNGAN.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -575,7 +575,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="Pemberdayaan Masyarakat" class="w-full object-cover aspect-square" src="{{ asset('images/3. Pemberdayaan Masyarakat.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -584,7 +584,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="Penghijauaan Kota" class="w-full object-cover aspect-square" src="{{ asset('images/4. Penghijauaan Kota.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -593,7 +593,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="Efiensi Energi" class="w-full object-cover aspect-square" src="{{ asset('images/5. Efiensi Energi.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
@@ -602,7 +602,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative group rounded-lg overflow-hidden shadow-lg p-8">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg p-4">
                 <img alt="inovasi berbasis limba" class="w-full object-cover aspect-square" src="{{ asset('images/6. inovasi berbasis limba.png') }}"/>
                 <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="text-center text-white p-4">
