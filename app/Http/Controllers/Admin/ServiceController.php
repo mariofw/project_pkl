@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,8 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::orderBy('order')->get();
-        return view('admin.services.index', compact('services'));
+        $servicesSection = Section::where('name', 'services')->first();
+        return view('admin.services.index', compact('services', 'servicesSection'));
     }
 
     public function create()

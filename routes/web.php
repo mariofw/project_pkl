@@ -32,9 +32,9 @@ Route::get('/', function () {
     $products = Product::all();
     $partnerships = Partnership::all();
     $articles = Article::latest()->get();
-    $whatWeOfferSection = Section::where('name', 'what_we_offer')->first() ?? new Section(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
+    $sections = Section::all()->keyBy('name');
     $offers = Offer::orderBy('order')->get();
-    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'whatWeOfferSection', 'offers'));
+    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'sections', 'offers'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {

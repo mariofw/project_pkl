@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Partnership;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,8 @@ class PartnershipController extends Controller
     public function index()
     {
         $partnerships = Partnership::all();
-        return view('admin.partnerships.index', compact('partnerships'));
+        $partnersSection = Section::where('name', 'partners')->first();
+        return view('admin.partnerships.index', compact('partnerships', 'partnersSection'));
     }
 
     public function create()

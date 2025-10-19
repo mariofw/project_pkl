@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Offer;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,8 @@ class OfferController extends Controller
     public function index()
     {
         $offers = Offer::orderBy('order')->get();
-        return view('admin.offers.index', compact('offers'));
+        $whatWeOfferSection = Section::where('name', 'what_we_offer')->first();
+        return view('admin.offers.index', compact('offers', 'whatWeOfferSection'));
     }
 
     public function create()

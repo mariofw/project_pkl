@@ -46,58 +46,59 @@
         </div>
     </div>
 
+    <style>
+        #content-area {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelectorAll('.nav-link');
             const contentArea = document.getElementById('content-area');
 
             function loadDynamicContent(url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.text();
-                    })
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        
-                        // Update header
-                        const newHeaderContent = doc.querySelector('#page-header-content');
-                        const pageHeaderContent = document.getElementById('page-header-content');
-                        if (pageHeaderContent && newHeaderContent) {
-                            pageHeaderContent.innerHTML = newHeaderContent.innerHTML;
-                        }
+                contentArea.classList.add('fade-out');
 
-                        // Update content
-                        const content = doc.querySelector('.py-12') || doc.querySelector('main');
-                        if (content) {
-                            contentArea.innerHTML = content.innerHTML;
+                setTimeout(() => {
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
                             
-                            // Manually execute scripts from loaded content
-                            const scripts = content.querySelectorAll('script');
-                            scripts.forEach(script => {
-                                const code = script.innerHTML;
-                                if (code.includes('DOMContentLoaded')) {
-                                    try {
-                                        // The script is wrapped in DOMContentLoaded, so we extract the code and run it.
-                                        const funcBody = code.substring(code.indexOf('{') + 1, code.lastIndexOf('}'));
-                                        new Function(funcBody)();
-                                    } catch (e) {
-                                        console.error('Error executing script: ', e);
-                                    }
-                                }
-                            });
-                        } else {
-                            console.error('Could not find content to load in fetched HTML.');
-                            contentArea.innerHTML = '<p>Could not load content. Please check console for details.</p>';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching content:', error);
-                        contentArea.innerHTML = '<p>Error loading content. Please check console for details.</p>';
-                    });
+                            const content = doc.querySelector('.py-12') || doc.querySelector('main') || doc.body;
+                            if (content) {
+                                contentArea.innerHTML = content.innerHTML;
+                                
+                                const scripts = content.querySelectorAll('script');
+                                scripts.forEach(script => {
+                                    const newScript = document.createElement('script');
+                                    newScript.innerHTML = script.innerHTML;
+                                    contentArea.appendChild(newScript);
+                                });
+
+                            } else {
+                                console.error('Could not find content to load in fetched HTML.');
+                                contentArea.innerHTML = '<p>Could not load content. Please check console for details.</p>';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching content:', error);
+                            contentArea.innerHTML = '<p>Error loading content. Please check console for details.</p>';
+                        })
+                        .finally(() => {
+                            contentArea.classList.remove('fade-out');
+                        });
+                }, 300); // Corresponds to the transition duration
             }
 
             // Sidebar links
