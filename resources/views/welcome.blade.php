@@ -616,23 +616,15 @@
 </section>
 
 
-  <!-- Testimonial -->
-  <section class="relative py-12 sm:py-16 lg:py-20 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-    <img alt="Hands with plant" class="absolute inset-0 w-full h-full object-cover z-0" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"/>
-    
-    <div class="relative z-20 container-responsive text-center">
-      <div class="max-w-4xl mx-auto">
-        <p class="text-sm sm:text-base italic mb-6 sm:mb-8 leading-relaxed">
-          "Sejak mengikuti pelatihan di Hidroganik Alfa, keluarga kami bisa menikmati sayuran segar setiap hari dari kebun hidroponik sendiri. Tim mereka sangat profesional dan sabar dalam memberikan panduan. Hasilnya melebihi ekspektasi kami!"
-        </p>
-        <div class="flex flex-col items-center space-y-3 sm:space-y-4">
-          <img alt="Customer testimonial" class="rounded-full border-4 border-green-400 w-16 h-16 sm:w-20 sm:h-20 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"/>
-          <div>
-            <p class="font-semibold text-green-300 text-sm sm:text-base">Ibu Sari Indrawati</p>
-            <p class="text-green-300 text-xs uppercase tracking-widest">Peserta Pelatihan</p>
-          </div>
-        </div>
+  <!-- Map -->
+  <section class="py-8 sm:py-12 lg:py-16 bg-gray-100">
+    <div class="container-responsive">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="font-bold text-xl sm:text-2xl">Lokasi Kami</h2>
+        <p class="text-gray-600 text-sm">Temukan kami di Google Maps</p>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0624100130085!2d114.59898717473106!3d-3.3347578966400064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de421bf7aef995f%3A0x594092a02701e3dd!2sHidroganik%20Alfa!5e0!3m2!1sen!2sid!4v1760860250497!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
       </div>
     </div>
   </section>

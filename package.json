@@ -19,7 +19,8 @@
         "vite": "^7.0.4"
     },
     "dependencies": {
-        "16": "^0.0.2"
+        "16": "^0.0.2",
+        "@tailwindcss/aspect-ratio": "^0.4.2"
     },
     "name": "project-pkl",
     "version": "1.0.0",
