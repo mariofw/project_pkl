@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\PartnershipController;
+use App\Http\Controllers\Admin\OfferController;
 use App\Models\About;
 use App\Models\DocumentationImage;
 use App\Models\HeroSection;
@@ -20,6 +21,7 @@ use App\Models\Product;
 use App\Models\Partnership;
 use App\Models\Article;
 use App\Models\Section;
+use App\Models\Offer;
 
 Route::get('/', function () {
     $hero = HeroSection::first() ?? new HeroSection(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
@@ -31,7 +33,8 @@ Route::get('/', function () {
     $partnerships = Partnership::all();
     $articles = Article::latest()->get();
     $whatWeOfferSection = Section::where('name', 'what_we_offer')->first() ?? new Section(['title' => 'Default Title', 'subtitle' => 'Default Subtitle']);
-    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'whatWeOfferSection'));
+    $offers = Offer::orderBy('order')->get();
+    return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'whatWeOfferSection', 'offers'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {
@@ -62,6 +65,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('products', ProductController::class)->except(['show']);
     Route::resource('articles', ArticleController::class)->except(['show']);
     Route::resource('partnerships', PartnershipController::class)->except(['show']);
+    Route::resource('offers', OfferController::class)->except(['show']);
     Route::get('sections/{section}/edit', [SectionController::class, 'edit'])->name('sections.edit');
     Route::put('sections/{section}', [SectionController::class, 'update'])->name('sections.update');
 });

@@ -27,6 +27,9 @@
                         <a href="{{ route('admin.partnerships.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Partnership</a>
                     </li>
                     <li class="mb-2">
+                        <a href="{{ route('admin.offers.index') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Offer</a>
+                    </li>
+                    <li class="mb-2">
                         <a href="{{ route('profile.edit') }}" class="block p-2 rounded hover:bg-gray-700 nav-link">Edit Profile</a>
                     </li>
                 </ul>
