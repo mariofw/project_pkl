@@ -26,15 +26,20 @@ class OfferController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'order' => 'required|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cropped_image' => 'required',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('offer_images', 'public');
-            $data['image_path'] = $path;
-        }
+        $imageData = $request->input('cropped_image');
+        list($type, $imageData) = explode(';', $imageData);
+        list(, $imageData)      = explode(',', $imageData);
+        $imageData = base64_decode($imageData);
+        $imageName = time().'.png';
+        $path = 'offer_images/'.$imageName;
+
+        Storage::disk('public')->put($path, $imageData);
+        $data['image_path'] = $path;
 
         Offer::create($data);
 
@@ -52,16 +57,24 @@ class OfferController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'order' => 'required|integer',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cropped_image' => 'sometimes|required',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        if ($request->hasFile('image')) {
+        if ($request->has('cropped_image') && $request->input('cropped_image')) {
             if ($offer->image_path) {
                 Storage::disk('public')->delete($offer->image_path);
             }
-            $path = $request->file('image')->store('offer_images', 'public');
+            
+            $imageData = $request->input('cropped_image');
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData)      = explode(',', $imageData);
+            $imageData = base64_decode($imageData);
+            $imageName = time().'.png';
+            $path = 'offer_images/'.$imageName;
+
+            Storage::disk('public')->put($path, $imageData);
             $data['image_path'] = $path;
         }
 
