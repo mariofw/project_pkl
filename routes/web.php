@@ -37,7 +37,10 @@ Route::get('/', function () {
     return view('welcome', compact('hero', 'services', 'heroImages', 'about', 'documentationImages', 'products', 'partnerships', 'articles', 'sections', 'offers'));
 })->name('welcome');
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', function (Illuminate\Http\Request $request) {
+    if ($request->ajax()) {
+        return view('admin.dashboard-welcome');
+    }
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -67,7 +70,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('partnerships', PartnershipController::class)->except(['show']);
     Route::resource('offers', OfferController::class)->except(['show']);
     Route::get('sections/{section}/edit', [SectionController::class, 'edit'])->name('sections.edit');
-    Route::put('sections/{section}', [SectionController::class, 'update'])->name('sections.update');
+    Route::post('sections/{section}', [SectionController::class, 'update'])->name('sections.update');
 });
 
 require __DIR__.'/auth.php';

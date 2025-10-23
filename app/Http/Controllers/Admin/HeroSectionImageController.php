@@ -10,9 +10,14 @@ use Illuminate\Support\Facades\Storage;
 
 class HeroSectionImageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $images = HeroSectionImage::all();
+
+        if ($request->ajax()) {
+            return view('admin.hero-images.partials.index-content', compact('images'));
+        }
+
         return view('admin.hero-images.index', compact('images'));
     }
 
@@ -31,24 +36,17 @@ class HeroSectionImageController extends Controller
         }
 
         $request->validate([
-            'image' => 'required|string',
+            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $heroSection = HeroSection::firstOrCreate([]);
 
-        $imageData = $request->input('image');
-        @list($type, $imageData) = explode(';', $imageData);
-        @list(, $imageData)      = explode(',', $imageData);
-
-        if ($imageData) {
-            $imageData = base64_decode($imageData);
-            $imageName = 'hero_images/' . uniqid() . '.jpg';
-    
-            Storage::disk('public')->put($imageName, $imageData);
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('hero_images', 'public');
     
             HeroSectionImage::create([
                 'hero_section_id' => $heroSection->id,
-                'image_path' => $imageName,
+                'image_path' => $imagePath,
             ]);
         }
 
@@ -67,27 +65,18 @@ class HeroSectionImageController extends Controller
     public function update(Request $request, HeroSectionImage $hero_image)
     {
         $request->validate([
-            'image' => 'sometimes|required|string',
+            'image_path' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if ($request->has('image') && $request->input('image')) {
+        if ($request->hasFile('image_path')) {
             // Delete old image
             Storage::disk('public')->delete($hero_image->image_path);
 
-            $imageData = $request->input('image');
-            @list($type, $imageData) = explode(';', $imageData);
-            @list(, $imageData)      = explode(',', $imageData);
+            $imagePath = $request->file('image_path')->store('hero_images', 'public');
 
-            if ($imageData) {
-                $imageData = base64_decode($imageData);
-                $imageName = 'hero_images/' . uniqid() . '.jpg';
-        
-                Storage::disk('public')->put($imageName, $imageData);
-
-                $hero_image->update([
-                    'image_path' => $imageName,
-                ]);
-            }
+            $hero_image->update([
+                'image_path' => $imagePath,
+            ]);
         }
 
         if ($request->wantsJson()) {
@@ -103,7 +92,7 @@ class HeroSectionImageController extends Controller
         $hero_image->delete();
 
         if ($request->wantsJson()) {
-            return response()->json(['success' => true, 'message' => 'Image deleted successfully.']);
+            return response()->json(['success' => true, 'message' => 'Image deleted successfully.', 'redirect_url' => route('admin.hero-images.create')]);
         }
 
         return redirect()->route('admin.hero-images.index')->with('success', 'Image deleted successfully.');

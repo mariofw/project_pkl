@@ -38,11 +38,7 @@
 
         <!-- Content Area -->
         <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 overflow-y-auto" id="content-area">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Welcome to the Admin Dashboard! Select an option from the sidebar to get started.") }}
-                </div>
-            </div>
+            {{-- Initial content will be loaded dynamically or via route --}}
         </div>
     </div>
 
@@ -64,7 +60,11 @@
                 contentArea.classList.add('fade-out');
 
                 setTimeout(() => {
-                    fetch(url)
+                    fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');
@@ -72,19 +72,25 @@
                             return response.text();
                         })
                         .then(html => {
+                            console.log('Fetched HTML:', html);
                             const parser = new DOMParser();
                             const doc = parser.parseFromString(html, 'text/html');
+                            console.log('Parsed document:', doc);
                             
-                            const content = doc.querySelector('.py-12') || doc.querySelector('main') || doc.body;
+                            const content = doc.querySelector('.py-12');
                             if (content) {
                                 contentArea.innerHTML = content.innerHTML;
                                 
-                                const scripts = content.querySelectorAll('script');
-                                scripts.forEach(script => {
-                                    const newScript = document.createElement('script');
-                                    newScript.innerHTML = script.innerHTML;
-                                    contentArea.appendChild(newScript);
-                                });
+                                // Explicitly call the initialization function if it exists
+                                if (typeof initializeHeroImageCropper === 'function') {
+                                    initializeHeroImageCropper();
+                                }
+                                if (typeof initializeServiceCropper === 'function') {
+                                    initializeServiceCropper();
+                                }
+                                if (typeof initializeOfferCropper === 'function') {
+                                    initializeOfferCropper();
+                                }
 
                             } else {
                                 console.error('Could not find content to load in fetched HTML.');
@@ -128,18 +134,28 @@
                     e.preventDefault();
                     const url = form.action;
                     const formData = new FormData(form);
-                    const method = (form.querySelector('input[name="_method"]')?.value || form.method).toUpperCase();
+                    formData.delete('_method');
+                    const method = form.method.toUpperCase();
+
+                    const headers = {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Accept': 'application/json, text/html',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    };
+
+                    // If the form contains a file input, let the browser set the Content-Type header for FormData
+                    // Otherwise, explicitly set it for JSON/HTML responses
+                    if (!Array.from(formData.values()).some(value => value instanceof File)) {
+                        headers['Content-Type'] = 'application/x-www-form-urlencoded'; // Or application/json if sending JSON
+                    }
 
                     fetch(url, {
-                        method: method === 'GET' ? 'GET' : 'POST',
+                        method: method,
                         body: formData,
-                        headers: {
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                            'Accept': 'application/json, text/html',
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
+                        headers: headers
                     })
                     .then(response => {
+                        console.log('Fetch response:', response);
                         // Clear previous errors on new submission attempt
                         form.querySelectorAll('.input-error-msg').forEach(el => el.remove());
                         form.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
@@ -163,6 +179,7 @@
                         }
 
                         if (response.redirected) {
+                            console.log('Redirected to:', response.url);
                             loadDynamicContent(response.url);
                             return Promise.reject(null); // Stop promise chain for redirect
                         }
@@ -177,13 +194,19 @@
                         return response.text();
                     })
                     .then(data => {
+                        console.log('Fetch success data:', data);
                         if (data && typeof data === 'object' && data.redirect_url) {
                             loadDynamicContent(data.redirect_url);
+                        } else if (data && typeof data === 'object' && data.message) {
+                            // Handle success message for non-redirecting actions like delete
+                            alert(data.message); // Or display in a more user-friendly way
+                            // Optionally, reload the current content area to reflect changes
+                            loadDynamicContent(window.location.href); // Reload current page
                         }
                     })
                     .catch(error => {
+                        console.error('Error submitting form:', error);
                         if (error) { // Only log if there's an actual error object
-                            console.error('Error submitting form:', error);
                             contentArea.innerHTML = '<p>Error submitting form. Please check console for details.</p>';
                         }
                     });

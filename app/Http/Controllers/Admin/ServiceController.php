@@ -10,10 +10,15 @@ use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $services = Service::orderBy('order')->get();
         $servicesSection = Section::where('name', 'services')->first();
+
+        if ($request->ajax()) {
+            return view('admin.services.partials.index-content', compact('services', 'servicesSection'));
+        }
+
         return view('admin.services.index', compact('services', 'servicesSection'));
     }
 
@@ -28,20 +33,15 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'order' => 'required|integer',
-            'cropped_image' => 'required',
+            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        $imageData = $request->input('cropped_image');
-        list($type, $imageData) = explode(';', $imageData);
-        list(, $imageData)      = explode(',', $imageData);
-        $imageData = base64_decode($imageData);
-        $imageName = time().'.png';
-        $path = 'service_images/'.$imageName;
-
-        Storage::disk('public')->put($path, $imageData);
-        $data['image_path'] = $path;
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('service_images', 'public');
+            $data['image_path'] = $imagePath;
+        }
 
         Service::create($data);
 
@@ -63,25 +63,18 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'order' => 'required|integer',
-            'cropped_image' => 'sometimes|required',
+            'image_path' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = $request->only('title', 'description', 'order');
 
-        if ($request->has('cropped_image') && $request->input('cropped_image')) {
+        if ($request->hasFile('image_path')) {
             if ($service->image_path) {
                 Storage::disk('public')->delete($service->image_path);
             }
             
-            $imageData = $request->input('cropped_image');
-            list($type, $imageData) = explode(';', $imageData);
-            list(, $imageData)      = explode(',', $imageData);
-            $imageData = base64_decode($imageData);
-            $imageName = time().'.png';
-            $path = 'service_images/'.$imageName;
-
-            Storage::disk('public')->put($path, $imageData);
-            $data['image_path'] = $path;
+            $imagePath = $request->file('image_path')->store('service_images', 'public');
+            $data['image_path'] = $imagePath;
         }
 
         $service->update($data);
@@ -93,12 +86,16 @@ class ServiceController extends Controller
         return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
     }
 
-    public function destroy(Service $service)
+    public function destroy(Service $service, Request $request)
     {
         if ($service->image_path) {
             Storage::disk('public')->delete($service->image_path);
         }
         $service->delete();
+
+        if ($request->wantsJson()) {
+            return response()->json(['success' => true, 'message' => 'Service deleted successfully.', 'redirect_url' => route('admin.services.create')]);
+        }
 
         return redirect()->route('admin.services.index')->with('success', 'Service deleted successfully.');
     }
