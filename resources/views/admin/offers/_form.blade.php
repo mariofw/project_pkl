@@ -21,9 +21,9 @@
 
 <!-- Image -->
 <div class="mt-4">
-    <x-input-label for="image" :value="__('Image')" />
-    <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" accept="image/*"/>
-    <x-input-error :messages="$errors->get('image')" class="mt-2" />
+    <x-input-label for="image_upload" :value="__('Image')" />
+    <input id="image_upload" name="image_path" type="file" class="mt-1 block w-full" accept="image/*"/>
+    <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
     @if (isset($offer) && $offer->image_path)
         <div class="mt-2">
             <p>Current Image:</p>
@@ -32,104 +32,113 @@
     @endif
 </div>
 
-<input type="hidden" name="cropped_image" id="cropped_image">
-
 <div class="flex items-center justify-end mt-4">
     <x-primary-button class="ml-4">
         {{ __('Save') }}
     </x-primary-button>
 </div>
 
-<!-- Crop Modal -->
-<div id="crop-modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
-    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div class="sm:flex sm:items-start">
-                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                            Crop Image
-                        </h3>
-                        <div class="mt-2">
-                            <img id="image-to-crop" src="" alt="Image to crop">
-                        </div>
-                    </div>
+<!-- Cropper Modal -->
+<div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden" id="imageCropModal">
+    <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
+        <div class="mt-3 text-center">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Crop Image</h3>
+            <div class="mt-2 px-7 py-3">
+                <div class="img-container">
+                    <img id="imageToCrop" src="" alt="Image to crop" class="max-w-full h-auto mx-auto">
                 </div>
             </div>
-            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <x-primary-button type="button" id="crop-button" class="w-full justify-center sm:ml-3 sm:w-auto">
+            <div class="items-center px-4 py-3">
+                <button id="cropButton" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300">
                     Crop & Save
-                </x-primary-button>
-                <x-secondary-button id="cancel-crop-button" class="mt-3 w-full justify-center sm:mt-0 sm:ml-3 sm:w-auto">
+                </button>
+                <button id="cancelCropButton" class="mt-2 px-4 py-2 bg-gray-300 text-gray-800 text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200">
                     Cancel
-                </x-secondary-button>
+                </button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('offer-form');
-    if (!form) return;
+    function initializeOfferCropper() {
+        console.log('initializeOfferCropper called.');
+        let cropper;
+        const imageUpload = document.getElementById('image_upload');
+        const imageCropModal = document.getElementById('imageCropModal');
+        const imageToCrop = document.getElementById('imageToCrop');
+        const cropButton = document.getElementById('cropButton');
+        const cancelCropButton = document.getElementById('cancelCropButton');
+        const offerForm = document.getElementById('offer-form');
 
-    const imageInput = form.querySelector('#image');
-    const croppedImageInput = form.querySelector('#cropped_image');
-    const modal = document.getElementById('crop-modal');
-    const imageToCrop = document.getElementById('image-to-crop');
-    const cropButton = document.getElementById('crop-button');
-    const cancelCropButton = document.getElementById('cancel-crop-button');
-    let cropper;
+        console.log('Elements found:', { imageUpload, imageCropModal, imageToCrop, cropButton, cancelCropButton, offerForm });
 
-    imageInput.addEventListener('change', function (e) {
-        const files = e.target.files;
-        if (files && files.length > 0) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                imageToCrop.src = event.target.result;
-                modal.classList.remove('hidden');
-                cropper = new Cropper(imageToCrop, {
-                    aspectRatio: 1 / 1,
-                    viewMode: 1,
-                });
-            };
-            reader.readAsDataURL(files[0]);
+        if (!imageUpload || !imageCropModal || !imageToCrop || !cropButton || !cancelCropButton || !offerForm) {
+            console.log('One or more required elements not found. Cropper initialization skipped.');
+            return; // Exit if elements are not found (e.g., on other pages)
         }
-    });
 
-    cropButton.addEventListener('click', function () {
-        if (cropper) {
-            const canvas = cropper.getCroppedCanvas();
-            canvas.toBlob(function (blob) {
+        imageUpload.addEventListener('change', function (e) {
+            console.log('Image upload change event fired.');
+            const files = e.target.files;
+            if (files && files.length > 0) {
+                console.log('File selected:', files[0].name);
                 const reader = new FileReader();
-                reader.onloadend = function() {
-                    croppedImageInput.value = reader.result;
-                    form.submit();
-                }
-                reader.readAsDataURL(blob);
-            });
-            modal.classList.add('hidden');
-        }
-    });
+                reader.onload = function (event) {
+                    console.log('FileReader loaded. Setting image source and showing modal.');
+                    imageToCrop.src = event.target.result;
+                    imageCropModal.classList.remove('hidden');
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+                    cropper = new Cropper(imageToCrop, {
+                        aspectRatio: 1 / 1, // Adjust aspect ratio as needed for your offer images
+                        viewMode: 1,
+                        autoCropArea: 0.8,
+                    });
+                    console.log('Cropper initialized.');
+                };
+                reader.readAsDataURL(files[0]);
+            }
+        });
 
-    cancelCropButton.addEventListener('click', function () {
-        modal.classList.add('hidden');
-        imageInput.value = ''; // Reset file input
-        if (cropper) {
-            cropper.destroy();
-            cropper = null;
-        }
-    });
+        cropButton.addEventListener('click', function () {
+            console.log('Crop button clicked.');
+            if (cropper) {
+                cropper.getCroppedCanvas().toBlob((blob) => {
+                    console.log('Image cropped to blob.');
+                    const file = new File([blob], "offer_image.png", { type: "image/png" });
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    imageUpload.files = dataTransfer.files;
+                    
+                    imageCropModal.classList.add('hidden');
+                    cropper.destroy();
+                    console.log('Cropper destroyed, modal hidden.');
+                }, 'image/png', 0.9); 
+            }
+        });
 
-    form.addEventListener('submit', function(e) {
-        if (imageInput.files && imageInput.files.length > 0 && !croppedImageInput.value) {
-            e.preventDefault();
-            alert('Please crop the image before saving.');
-        }
-    });
-});
+        cancelCropButton.addEventListener('click', function () {
+            console.log('Cancel button clicked.');
+            imageCropModal.classList.add('hidden');
+            if (cropper) {
+                cropper.destroy();
+            }
+            imageUpload.value = ''; 
+            console.log('Modal hidden, image input cleared.');
+        });
+
+        offerForm.addEventListener('submit', function(e) {
+            console.log('Form submit event fired.');
+            if (imageUpload.files && imageUpload.files.length === 0 && imageUpload.required) {
+                e.preventDefault();
+                alert('Please select and crop an image before uploading.');
+                console.log('Form submission prevented: no image selected.');
+            }
+        });
+    }
+
+    // Call the function directly when the script is loaded
+    initializeOfferCropper();
 </script>

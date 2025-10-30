@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('admin.articles.index', compact('articles'));
+        $blogSection = Section::where('name', 'blog')->first();
+        return view('admin.articles.index', compact('articles', 'blogSection'));
     }
 
     public function create()

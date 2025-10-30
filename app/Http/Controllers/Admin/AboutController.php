@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -15,7 +16,8 @@ class AboutController extends Controller
     public function edit()
     {
         $about = About::firstOrNew([]);
-        return view('admin.abouts.edit', compact('about'));
+        $aboutSection = Section::where('name', 'about')->first();
+        return view('admin.abouts.edit', compact('about', 'aboutSection'));
     }
 
     /**

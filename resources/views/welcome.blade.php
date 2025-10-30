@@ -176,8 +176,8 @@
 <section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Layanan Kami</p>
-            <h2 class="font-bold text-xl sm:text-2xl">Solusi Pertanian Modern</h2>
+            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">{{ $sections['services']->title ?? 'Layanan Kami' }}</p>
+            <h2 class="font-bold text-xl sm:text-2xl">{{ $sections['services']->subtitle ?? 'Solusi Pertanian Modern' }}</h2>
         </div>
         <div class="flex justify-start sm:justify-center gap-4 sm:gap-6 overflow-x-auto pb-4" id="services-container">
             @foreach ($services as $service)
@@ -207,9 +207,9 @@
             </div>
             <div class="space-y-4 sm:space-y-6">
                 <div>
-                    <p class="text-green-700 font-semibold text-xs uppercase tracking-wider">TENTANG KAMI</p>
+                    <p class="text-green-700 font-semibold text-xs uppercase tracking-wider">{{ $sections['about']->title ?? 'TENTANG KAMI' }}</p>
                     <h2 class="text-xl sm:text-2xl font-bold leading-tight">
-                        Hidroponik Organik Untuk Masa Depan Sehat
+                        {{ $sections['about']->subtitle ?? 'Hidroponik Organik Untuk Masa Depan Sehat' }}
                     </h2>
                     <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {{ $about->tentang_kami }}
@@ -239,8 +239,8 @@
 <section class="py-8 sm:py-12 lg:py-16 bg-green-50">
     <div class="container-responsive">
         <div class="text-center mb-8 sm:mb-12">
-            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">{{ $whatWeOfferSection->title }}</p>
-            <h2 class="font-bold text-xl sm:text-2xl">{{ $whatWeOfferSection->subtitle }}</h2>
+            <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">{{ $sections['what_we_offer']->title ?? 'What We Offer' }}</p>
+            <h2 class="font-bold text-xl sm:text-2xl">{{ $sections['what_we_offer']->subtitle ?? 'Let your home have a breath of fresh air' }}</h2>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             @foreach ($offers as $offer)
@@ -304,8 +304,8 @@
   <section class="bg-green-700 text-green-100 py-6 sm:py-8">
     <div class="container-responsive">
       <div class="text-center mb-8">
-        <h2 class="font-bold text-xl sm:text-2xl">Our Partners</h2>
-        <p class="text-sm text-green-200">Kami Bekerja Sama dengan Mitra Terpercaya</p>
+        <h2 class="font-bold text-xl sm:text-2xl">{{ $sections['partners']->title ?? 'Our Partners' }}</h2>
+        <p class="text-sm text-green-200">{{ $sections['partners']->subtitle ?? 'Kami Bekerja Sama dengan Mitra Terpercaya' }}</p>
       </div>
       <div class="relative">
         <div class="flex justify-center overflow-x-auto space-x-6 pb-4" id="partners-container">
@@ -521,8 +521,8 @@
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
       <div class="text-center mb-8 sm:mb-12">
-        <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Our Blog</p>
-        <h2 class="font-bold text-xl sm:text-2xl">Berita & Blog Terbaru Kami</h2>
+        <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">{{ $sections['blog']->title ?? 'Our Blog' }}</p>
+        <h2 class="font-bold text-xl sm:text-2xl">{{ $sections['blog']->subtitle ?? 'Berita & Blog Terbaru Kami' }}</h2>
       </div>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
