@@ -340,6 +340,91 @@
     </div>
   </section>
 
+<<<<<<< HEAD
+=======
+  <!-- Why Choose Us -->
+  <section class="py-8 sm:py-12 lg:py-16">
+    <div class="container-responsive">
+        <div class="flex flex-col gap-8 lg:gap-12">
+
+
+            <!-- Text Content -->
+            <div class="space-y-6 sm:space-y-8">
+                <div>
+                    <p class="text-green-700 font-semibold text-xs uppercase tracking-wider mb-2">Why Choose Us</p>
+                    <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-4">
+                        Kami berkomitmen untuk memberikan yang terbaik dalam setiap layanan yang kami berikan dengan pendekatan yang personal dan profesional.
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+                    <!-- Item 1: Berpengalaman -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Berpengalaman" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Berpengalaman</h3>
+                                <p class="text-sm">Lahir dari pengalaman langsung bertani di rumah hingga berkembang menjadi usaha profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2: Ahli Instalasi -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Ahli Instalasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Ahli Instalasi</h3>
+                                <p class="text-sm">Berpengalaman membuat instalasi untuk rumah tangga, sekolah, instansi, komunitas hingga bisnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3: Instruktur Bersertifikasi -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Instruktur Bersertifikasi" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Instruktur Bersertifikasi</h3>
+                                <p class="text-sm">Dipandu oleh owner yang sudah bersertifikasi BNSP, menjamin mutu materi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4: Materi Aplikatif -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Materi Aplikatif" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Materi Aplikatif</h3>
+                                <p class="text-sm">Peserta tidak hanya belajar teori tetapi juga langsung praktik yang mudah dipahami.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5: Pendampingan Berkelanjutan -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Pendampingan Berkelanjutan" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Pendampingan Berkelanjutan</h3>
+                                <p class="text-sm">Memberikan support setelah pelatihan agar peserta berhasil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6: Komunitas Pembelajar -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Komunitas Pembelajar" class="w-full aspect-square object-cover transition-transform transform group-hover:scale-110" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"/>
+                        <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="text-center text-white p-4">
+                                <h3 class="font-bold text-lg mb-2">Komunitas Pembelajar</h3>
+                                <p class="text-sm">Bergabung dengan komunitas untuk berbagi pengalaman dan pengetahuan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+>>>>>>> parent of 4bdcd26 (-)
   <!-- Professional Section -->
   <section class="bg-gray-50 py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
