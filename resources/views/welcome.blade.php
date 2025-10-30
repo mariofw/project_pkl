@@ -508,6 +508,15 @@
 </section>
 
 
+  <!-- Map -->
+  <section class="bg-gray-100">
+    <div class="text-center py-16">
+      <h2 class="font-bold text-xl sm:text-2xl">Lokasi Kami</h2>
+      <p class="text-gray-600 text-sm">Temukan kami di Google Maps</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0624100130085!2d114.59898717473106!3d-3.3347578966400064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de421bf7aef995f%3A0x594092a02701e3dd!2sHidroganik%20Alfa!5e0!3m2!1sen!2sid!4v1760860250497!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
   <!-- Blog Section -->
   <section class="py-8 sm:py-12 lg:py-16">
     <div class="container-responsive">
@@ -535,15 +544,6 @@
         @endforelse
       </div>
     </div>
-  </section>
-
-  <!-- Map -->
-  <section class="bg-gray-100">
-    <div class="text-center py-16">
-      <h2 class="font-bold text-xl sm:text-2xl">Lokasi Kami</h2>
-      <p class="text-gray-600 text-sm">Temukan kami di Google Maps</p>
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0624100130085!2d114.59898717473106!3d-3.3347578966400064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de421bf7aef995f%3A0x594092a02701e3dd!2sHidroganik%20Alfa!5e0!3m2!1sen!2sid!4v1760860250497!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
   <!-- Footer -->
